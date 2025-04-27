@@ -1,0 +1,80 @@
+.nav__btn, .back__btn, .btn__container Button {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-border-width: 0;
+    -fx-border-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.btn__container {
+       -fx-background-color: #FFFFFF;
+}
+
+.nav__bar {
+    -fx-background-color: #FFFFFF;
+}
+
+HBox {
+    -fx-background-color: #FFFFFF;
+}
+
+.left__pane {
+    -fx-background-color: #CFCFCF;
+}
+
+.title__page {
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+}
+
+TextField {
+   -fx-border-color: #CFCFCF;
+   -fx-border-width: 1px;
+   -fx-border-radius: 5px;
+}
+
+.inputLabel {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.file__input {
+    -fx-cursor: hand;
+    -fx-background-color: #FFFFFF;
+    -fx-spacing: 5px;
+    -fx-border-width: 2px;
+    -fx-border-color: #CFCFCF;
+    -fx-border-radius: 5px;
+}
+
+.file__upload {
+    -fx-background-color: #CFCFCF;
+}
+
+.file__upload, .file__path {
+   -fx-padding: 8px;
+}
+
+.profile__image {
+   -fx-border-width: 1px;
+   -fx-border-radius: 5px;
+   -fx-border-color: #CFCFCF;
+}
+
+.btn {
+    -fx-background-color: #F60EE7;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.btn:hover {
+    -fx-background-color: #D402C7;
+}

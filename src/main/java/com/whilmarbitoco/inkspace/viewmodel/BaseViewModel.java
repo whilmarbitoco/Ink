@@ -7,6 +7,8 @@ import com.whilmarbitoco.inkspace.utils.ViewHandler;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+import java.util.UUID;
+
 abstract public class BaseViewModel {
 
     private final SessionRepository sessionRepo = new SessionRepository();
@@ -27,6 +29,11 @@ abstract public class BaseViewModel {
 
     public StringProperty errorProperty() {
         return error;
+    }
+
+    public String generateRandomFileName(String extension) {
+        String randomName = UUID.randomUUID().toString();
+        return randomName + (extension.startsWith(".") ? extension : "." + extension);
     }
 
     public StringProperty messageProperty() {

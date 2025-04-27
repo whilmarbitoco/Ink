@@ -4,52 +4,51 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox prefHeight="476.0" prefWidth="638.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:controller="com.whilmarbitoco.inkspace.view.controller.user.ProfileController" prefHeight="410.0" prefWidth="587.0" stylesheets="@profile.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
 
-  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="799.0">
-      <Pane prefWidth="15" />
-    <Button text="Go Back" />
-  </HBox>
-    <HBox alignment="CENTER" prefHeight="425.0" prefWidth="799.0">
-        <VBox prefHeight="425.0" prefWidth="211.0" spacing="5">
+    <HBox alignment="CENTER_LEFT" prefHeight="411.0" prefWidth="594.0">
+        <VBox prefHeight="425.0" prefWidth="211.0" spacing="5" styleClass="left__pane">
             <VBox alignment="CENTER" prefHeight="214.0" prefWidth="195.0">
-                <ImageView fitHeight="188.0" fitWidth="192.0">
+                <ImageView fx:id="profileImage" fitHeight="196.0" fitWidth="192.0" styleClass="profile__img">
                     <Image url="@img/camus.jpg" />
                 </ImageView>
             </VBox>
             <VBox alignment="TOP_RIGHT" prefHeight="168.0" prefWidth="195.0" spacing="10">
-                <Button text="Personal Information" />
-                <Button text="Address Information" />
+                <VBox alignment="CENTER_RIGHT" prefHeight="39.0" prefWidth="192.0" styleClass="btn__container">
+                    <Button prefHeight="39.0" prefWidth="181.0" styleClass="active" text="Personal Information" />
+                </VBox>
+                <Button onAction="#gotoAddress" prefHeight="39.0" prefWidth="181.0" styleClass="nav__btn" text="Address Information" />
             </VBox>
         </VBox>
-        <VBox prefHeight="425.0" prefWidth="330.0" spacing="15">
-            <Label text="Personal Information" />
-            <VBox alignment="TOP_CENTER" prefHeight="240.0" prefWidth="330.0" spacing="10">
-                <HBox spacing="5">
+        <Pane prefWidth="10" />
+        <VBox alignment="CENTER_LEFT" prefHeight="388.0" prefWidth="330.0" spacing="15" styleClass="right__pane">
+            <Label prefHeight="19.0" prefWidth="125.0" styleClass="title__page" text="Account Details" />
+            <VBox alignment="TOP_CENTER" prefHeight="248.0" prefWidth="330.0" spacing="10">
+                <HBox prefHeight="65.0" prefWidth="330.0" spacing="5">
                     <VBox prefHeight="43.0" prefWidth="203.0" spacing="5">
-                        <Label text="Firstname" />
-                        <TextField promptText="john" />
+                        <Label styleClass="inputLabel" text="Firstname" />
+                        <TextField fx:id="firstnameField" prefHeight="37.0" promptText="john" />
                     </VBox>
                     <VBox prefHeight="43.0" prefWidth="200.0" spacing="5">
-                        <Label text="Lastname" />
-                        <TextField promptText="doe" />
+                        <Label styleClass="inputLabel" text="Lastname" />
+                        <TextField fx:id="lastnameField" prefHeight="37.0" promptText="doe" />
                     </VBox>
                 </HBox>
                 <VBox spacing="5">
-                    <Label text="Email" />
-                    <TextField prefHeight="37.0" prefWidth="403.0" promptText="johndoe@gmail.com" />
+                    <Label styleClass="inputLabel" text="Email" />
+                    <TextField fx:id="emailField" prefHeight="37.0" prefWidth="403.0" promptText="johndoe@gmail.com" />
                 </VBox>
                 <VBox spacing="5">
-                    <Label text="Profile" />
-                    <HBox>
-                        <Label text="upload" />
-                        <Label text="path/to/image.png" />
+                    <Label styleClass="inputLabel" text="Profile" />
+                    <HBox styleClass="file__input">
+                        <Button onAction="#openFile" styleClass="file__upload" text="upload" />
+                        <Label fx:id="pathField" styleClass="file__path" text="No such file selected." />
                     </HBox>
                 </VBox>
 
             </VBox>
             <HBox alignment="CENTER_RIGHT">
-                <Button text="Update" />
+                <Button fx:id="updateBtn" onAction="#updateAction" prefHeight="33.0" prefWidth="106.0" styleClass="btn" text="Update" managed="false" visible="false" />
             </HBox>
         </VBox>
     </HBox>

@@ -22,8 +22,11 @@ public class Main extends Application {
         }
 
         UserStore.getInstance().setUser(currentUser.get());
-        ViewHandler.handleRole(currentUser.get().getRoleID());
+//        ViewHandler.handleRole(currentUser.get().getRoleID());
+        ViewHandler.openView("user/ProfileView");
     }
+
+
 
     public static void main(String[] args) {
         launch(args);
