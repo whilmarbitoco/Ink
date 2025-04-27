@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="TOP_CENTER" prefHeight="170.0" prefWidth="177.0" styleClass="card__container" stylesheets="@item.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+    <ImageView fitHeight="86.0" fitWidth="91.0" preserveRatio="true">
+        <Image url="@img/camus.jpg" />
+    </ImageView>
+
+    <VBox>
+        <Label prefHeight="20.0" prefWidth="172.0" styleClass="card__title" text="Albert Camus" />
+        <Label alignment="TOP_LEFT" prefHeight="46.0" prefWidth="155.0" styleClass="card__description" text="Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature" wrapText="true" />
+    </VBox>
+</VBox>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<HBox prefHeight="448.0" prefWidth="693.0" stylesheets="@signup.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.whilmarbitoco.inkspace.view.controller.auth.SignupController">
+
+    <VBox prefHeight="447.0" prefWidth="353.0">
+        <ImageView fitHeight="448.0" fitWidth="356.0">
+            <Image url="@image.png" />
+        </ImageView>
+    </VBox>
+    <VBox prefHeight="447.0" prefWidth="400.0">
+       <HBox alignment="TOP_RIGHT">
+           <ImageView fitHeight="48.0" fitWidth="96.0" preserveRatio="true">
+               <Image url="@logo.png" />
+           </ImageView>
+           <Pane prefWidth="10.0" />
+       </HBox>
+
+        <VBox alignment="center" styleClass="header">
+            <Label text="Shop With Us">
+                <font>
+                    <Font name="Constantia" size="27.0" />
+                </font>
+            </Label>
+            <Label text="Create an account to continue">
+                <font>
+                    <Font name="Corbel" size="13.0" />
+                </font>
+            </Label>
+        </VBox>
+
+        <VBox prefHeight="357.0" prefWidth="338.0" styleClass="container">
+            <HBox spacing="10">
+                <VBox styleClass="input">
+                    <Label styleClass="inputLabel" text="Firstname" />
+                    <TextField fx:id="firstnameField" prefHeight="34.0" prefWidth="179.0" promptText="Enter your firstname" />
+                </VBox>
+                <VBox styleClass="input">
+                    <Label styleClass="inputLabel" text="Lastname" />
+                    <TextField fx:id="lastnameField" prefHeight="34.0" prefWidth="179.0" promptText="Enter your lastname" />
+                </VBox>
+            </HBox>
+
+            <VBox styleClass="input">
+                <Label styleClass="inputLabel" text="Email" />
+                <TextField fx:id="emailField" prefHeight="34.0" promptText="Enter your Email" />
+            </VBox>
+            <VBox prefHeight="79.0" prefWidth="278.0" styleClass="input">
+                <Label styleClass="inputLabel" text="Password" />
+                <PasswordField fx:id="passwordField" prefHeight="34.0" promptText="Enter your password" />
+                <TextField fx:id="passwordVisibleField" managed="false" prefHeight="34.0" promptText="Enter your password" visible="false" />
+                <HBox spacing="6">
+                    <CheckBox onMouseClicked="#togglePassword" />
+                    <Label text="See password" />
+                </HBox>
+            </VBox>
+            <Pane prefHeight="1" />
+            <Button onMouseClicked="#signup" prefHeight="34.0" prefWidth="330.0" styleClass="btn" text="Signup" />
+            <HBox alignment="center" spacing="6">
+                <Label text="Already have an account?" />
+                <Label onMouseClicked="#switchTo" styleClass="callTo" text="Login" />
+            </HBox>
+        </VBox>
+
+    </VBox>
+</HBox>

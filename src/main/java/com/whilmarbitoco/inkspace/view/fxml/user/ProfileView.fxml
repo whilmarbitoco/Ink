@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="476.0" prefWidth="638.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+
+  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="799.0">
+      <Pane prefWidth="15" />
+    <Button text="Go Back" />
+  </HBox>
+    <HBox alignment="CENTER" prefHeight="425.0" prefWidth="799.0">
+        <VBox prefHeight="425.0" prefWidth="211.0" spacing="5">
+            <VBox alignment="CENTER" prefHeight="214.0" prefWidth="195.0">
+                <ImageView fitHeight="188.0" fitWidth="192.0">
+                    <Image url="@img/camus.jpg" />
+                </ImageView>
+            </VBox>
+            <VBox alignment="TOP_RIGHT" prefHeight="168.0" prefWidth="195.0" spacing="10">
+                <Button text="Personal Information" />
+                <Button text="Address Information" />
+            </VBox>
+        </VBox>
+        <VBox prefHeight="425.0" prefWidth="330.0" spacing="15">
+            <Label text="Personal Information" />
+            <VBox alignment="TOP_CENTER" prefHeight="240.0" prefWidth="330.0" spacing="10">
+                <HBox spacing="5">
+                    <VBox prefHeight="43.0" prefWidth="203.0" spacing="5">
+                        <Label text="Firstname" />
+                        <TextField promptText="john" />
+                    </VBox>
+                    <VBox prefHeight="43.0" prefWidth="200.0" spacing="5">
+                        <Label text="Lastname" />
+                        <TextField promptText="doe" />
+                    </VBox>
+                </HBox>
+                <VBox spacing="5">
+                    <Label text="Email" />
+                    <TextField prefHeight="37.0" prefWidth="403.0" promptText="johndoe@gmail.com" />
+                </VBox>
+                <VBox spacing="5">
+                    <Label text="Profile" />
+                    <HBox>
+                        <Label text="upload" />
+                        <Label text="path/to/image.png" />
+                    </HBox>
+                </VBox>
+
+            </VBox>
+            <HBox alignment="CENTER_RIGHT">
+                <Button text="Update" />
+            </HBox>
+        </VBox>
+    </HBox>
+
+</VBox>

@@ -1,0 +1,69 @@
+.username {
+    -fx-font-weight: bold;
+    -fx-font-color: #000000;
+    -fx-cursor: hand;
+}
+
+.username:hover {
+    -fx-text-fill: #F60EE7;
+    -fx-font-size: 13px;
+}
+
+TextField {
+   -fx-border-color: #CFCFCF;
+   -fx-border-width: 1px;
+   -fx-border-radius: 5px;
+}
+
+.sidebar__container {
+   -fx-padding: 10px;
+}
+
+.sidebar {
+   -fx-background-color: #FFFFFF;
+   -fx-padding: 7px;
+   -fx-border-width: 1px;
+   -fx-border-color: #C9C9C9;
+   -fx-border-radius: 10px;
+}
+
+.title__col {
+   -fx-text-fill: #000000;
+   -fx-font-size: 13px;
+}
+
+.nav__btn {
+    -fx-cursor: hand;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-border-width: 0;
+    -fx-border-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.nav__btn:hover {
+  -fx-border-color: transparent transparent #F60EE7 transparent;
+    -fx-border-width: 0 0 2 0;
+}
+
+ScrollPane {
+    -fx-background-color: transparent;
+}
+
+ScrollPane .viewport {
+    -fx-background-color: transparent;
+}
+
+ScrollPane .scroll-bar:vertical {
+    -fx-background-color: #f0f0f0;
+    -fx-pref-width: 10px;
+}
+
+ScrollPane .increment-button, ScrollPane .decrement-button {
+    -fx-background-color: #ddd;
+    -fx-padding: 2px;
+}
+
+

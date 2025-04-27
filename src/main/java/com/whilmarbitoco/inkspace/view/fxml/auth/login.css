@@ -1,0 +1,46 @@
+.container {
+    -fx-padding: 30px;
+    -fx-spacing: 12;
+ }
+
+ .header {
+    -fx-alignment: center;
+ }
+
+.input {
+    -fx-spacing: 5;
+}
+
+.input .inputLabel {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.input TextField, .input PasswordField {
+   -fx-border-color: #CFCFCF;
+   -fx-border-width: 1px;
+   -fx-border-radius: 5px;
+}
+
+.btn {
+    -fx-background-color: #F60EE7;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.btn:hover {
+    -fx-background-color: #D402C7;
+}
+
+.callTo {
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.callTo:hover {
+    -fx-font-size: 12.5px;
+    -fx-text-fill: #333333;
+}
