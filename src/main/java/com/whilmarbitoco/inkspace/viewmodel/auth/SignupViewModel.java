@@ -2,13 +2,11 @@ package com.whilmarbitoco.inkspace.viewmodel.auth;
 
 import com.whilmarbitoco.inkspace.model.User;
 import com.whilmarbitoco.inkspace.repository.UserRepository;
-import com.whilmarbitoco.inkspace.utils.EmailValidator;
+import com.whilmarbitoco.inkspace.utils.Validator;
 import com.whilmarbitoco.inkspace.utils.Hasher;
 import com.whilmarbitoco.inkspace.viewmodel.BaseViewModel;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-
-import java.util.Optional;
 
 public class SignupViewModel extends BaseViewModel  {
 
@@ -28,7 +26,12 @@ public class SignupViewModel extends BaseViewModel  {
             return;
         }
 
-        if (!EmailValidator.isValidEmail(email.get())) {
+        if (password.get().length() < 6) {
+            error.setValue("Password should be 6 characters long.");
+            return;
+        }
+
+        if (!Validator.isValidEmail(email.get())) {
             error.setValue("Invalid Email Format");
             return;
         }
@@ -40,7 +43,7 @@ public class SignupViewModel extends BaseViewModel  {
             return;
         }
 
-        userRepo.create(new User(firstname.get(), lastname.get(), email.get(), Hasher.hash(password.get()), 2));
+        userRepo.create(new User(firstname.get(), lastname.get(), email.get(), Hasher.hash(password.get()), "", 2));
         message.setValue("Login Successfully");
         switchTo("auth/LoginView");
     }

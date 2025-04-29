@@ -16,14 +16,14 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Optional<User> currentUser = sessionRepo.getCurrentUser();
-        if (currentUser == null || currentUser.isEmpty()) {
+        if (currentUser.isEmpty()) {
             ViewHandler.openView("auth/LoginView");
             return;
         }
 
         UserStore.getInstance().setUser(currentUser.get());
-        ViewHandler.handleRole(currentUser.get().getRoleID());
-//        ViewHandler.openView("seller/SellerView");
+//        ViewHandler.handleRole(currentUser.get().getRoleID());
+        ViewHandler.openView("seller/SellerView");
     }
 
 

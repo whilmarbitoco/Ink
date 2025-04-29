@@ -5,14 +5,13 @@ import com.whilmarbitoco.inkspace.model.User;
 import com.whilmarbitoco.inkspace.repository.SessionRepository;
 import com.whilmarbitoco.inkspace.repository.UserRepository;
 import com.whilmarbitoco.inkspace.store.UserStore;
-import com.whilmarbitoco.inkspace.utils.EmailValidator;
+import com.whilmarbitoco.inkspace.utils.Validator;
 import com.whilmarbitoco.inkspace.utils.Hasher;
 import com.whilmarbitoco.inkspace.utils.ViewHandler;
 import com.whilmarbitoco.inkspace.viewmodel.BaseViewModel;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-import java.util.Optional;
 import java.util.UUID;
 
 public class LoginViewModel extends BaseViewModel {
@@ -32,7 +31,7 @@ public class LoginViewModel extends BaseViewModel {
             return;
         }
 
-        if (!EmailValidator.isValidEmail(email.get())) {
+        if (!Validator.isValidEmail(email.get())) {
             error.setValue("Invalid Email Format.");
             return;
         }

@@ -21,7 +21,7 @@ public class SessionRepository extends BaseRepository<Session> {
 
     public Optional<User> getCurrentUser() {
         List<Session> result = findWhere("SessionID", ">", "0 LIMIT 1");
-        if (result.isEmpty()) return null;
+        if (result.isEmpty()) return Optional.empty();
 
         return userRepo.findByID(result.getFirst().getUserID());
     }

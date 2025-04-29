@@ -3,6 +3,7 @@ package com.whilmarbitoco.inkspace.view.controller.user;
 import com.whilmarbitoco.inkspace.utils.ViewHandler;
 import com.whilmarbitoco.inkspace.view.controller.BaseController;
 import com.whilmarbitoco.inkspace.viewmodel.user.BookViewModel;
+import com.whilmarbitoco.inkspace.viewmodel.user.StoreVIewModel;
 import javafx.animation.PauseTransition;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -23,7 +24,7 @@ public class StoreController extends BaseController {
     public Button createStoreBtn;
     public Button myStoreBtn;
 
-    private final BookViewModel viewModel = new BookViewModel();
+    private final StoreVIewModel viewModel = new StoreVIewModel();
 
 
     public void initialize() {
@@ -66,5 +67,6 @@ public class StoreController extends BaseController {
     }
 
     public void myStore(ActionEvent actionEvent) {
+        viewModel.switchTo("seller/SellerView");
     }
 }

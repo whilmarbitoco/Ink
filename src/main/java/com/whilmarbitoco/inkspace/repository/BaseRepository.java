@@ -17,7 +17,7 @@ import java.util.Optional;
 
 public class BaseRepository<T> {
 
-    private final Connection connection = DBConnection.getConnection();
+    protected final Connection connection = DBConnection.getConnection();
 
     protected EntityManager<T> entityManager;
     protected Builder builder;

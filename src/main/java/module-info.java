@@ -14,8 +14,8 @@ module com.whilmarbitoco.inkspace {
     opens com.whilmarbitoco.inkspace.view.controller.user to javafx.fxml;
     exports com.whilmarbitoco.inkspace.view.controller.user;
 
-//    opens com.whilmarbitoco.inkspace.view.controller.seller to javafx.fxml;
-//    exports com.whilmarbitoco.inkspace.view.controller.seller;
+    opens com.whilmarbitoco.inkspace.view.controller.seller to javafx.fxml;
+    exports com.whilmarbitoco.inkspace.view.controller.seller;
 
     opens com.whilmarbitoco.inkspace to javafx.fxml;
     exports com.whilmarbitoco.inkspace;
