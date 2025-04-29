@@ -4,7 +4,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox fx:controller="com.whilmarbitoco.inkspace.view.controller.user.ProfileController" prefHeight="410.0" prefWidth="587.0" stylesheets="@profile.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:controller="com.whilmarbitoco.inkspace.view.controller.user.ProfileController" prefHeight="410.0" prefWidth="587.0" stylesheets="@css/profile.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
 
     <HBox alignment="CENTER_LEFT" prefHeight="411.0" prefWidth="594.0">
         <VBox prefHeight="425.0" prefWidth="211.0" spacing="5" styleClass="left__pane">
@@ -17,7 +17,7 @@
                 <VBox alignment="CENTER_RIGHT" prefHeight="39.0" prefWidth="192.0" styleClass="btn__container">
                     <Button prefHeight="39.0" prefWidth="181.0" styleClass="active" text="Personal Information" />
                 </VBox>
-                <Button onAction="#gotoAddress" prefHeight="39.0" prefWidth="181.0" styleClass="nav__btn" text="Address Information" />
+                <Button onAction="#switchToAddress" prefHeight="39.0" prefWidth="181.0" styleClass="nav__btn" text="Address Information" />
             </VBox>
         </VBox>
         <Pane prefWidth="10" />

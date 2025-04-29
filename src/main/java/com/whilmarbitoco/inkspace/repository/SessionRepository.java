@@ -6,7 +6,7 @@ import com.whilmarbitoco.inkspace.model.User;
 import java.util.List;
 import java.util.Optional;
 
-public class SessionRepository extends Repository<Session> {
+public class SessionRepository extends BaseRepository<Session> {
 
     private final UserRepository userRepo = new UserRepository();
 

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:controller="com.whilmarbitoco.inkspace.view.controller.user.UpdateAddressController" prefHeight="523.0" prefWidth="379.0" stylesheets="@css/update.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<HBox alignment="CENTER" prefHeight="499.0" prefWidth="379.0">
+    <VBox alignment="TOP_CENTER" prefHeight="511.0" prefWidth="262.0" spacing="10">
+        <Pane prefHeight="10" />
+        <Label fx:id="headerLabel" styleClass="header__text" text="Address Information" />
+
+        <VBox prefHeight="48.0" prefWidth="262.0" spacing="5" styleClass="input__container">
+            <Label styleClass="input__label" text="Address Label" />
+            <TextField fx:id="labelField" prefHeight="20.0" prefWidth="424.0" promptText="e.g. Work Address" />
+        </VBox>
+        <VBox prefHeight="48.0" prefWidth="262.0" spacing="5" styleClass="input__container">
+            <Label styleClass="input__label" text="Street" />
+            <TextField fx:id="streetField" prefHeight="20.0" prefWidth="424.0" promptText="e.g. 123 St." />
+        </VBox>
+        <VBox prefHeight="48.0" prefWidth="262.0" spacing="5" styleClass="input__container">
+            <Label styleClass="input__label" text="Barangay" />
+            <TextField fx:id="barangayField" prefHeight="20.0" prefWidth="424.0" promptText="e.g. Mankilam" />
+        </VBox>
+        <VBox prefHeight="48.0" prefWidth="262.0" spacing="5" styleClass="input__container">
+            <Label styleClass="input__label" text="City" />
+            <TextField fx:id="cityField" prefHeight="20.0" prefWidth="424.0" promptText="e.g. Tagum City" />
+        </VBox>
+        <VBox prefHeight="48.0" prefWidth="262.0" spacing="5" styleClass="input__container">
+            <Label styleClass="input__label" text="Region" />
+            <TextField fx:id="regionField" prefHeight="20.0" prefWidth="424.0" promptText="e.g. Davao Region" />
+        </VBox>
+        <VBox prefHeight="48.0" prefWidth="262.0" spacing="5" styleClass="input__container">
+            <Label styleClass="input__label" text="Postal Code" />
+            <TextField fx:id="postalField" prefHeight="20.0" prefWidth="424.0" promptText="e.g. 8100" />
+        </VBox>
+
+        <HBox alignment="CENTER_RIGHT">
+            <Button fx:id="updateBtn" onAction="#updateAction" styleClass="btn" prefHeight="33.0" prefWidth="113.0" text="Update" />
+        </HBox>
+
+    </VBox>
+
+</HBox>
+</VBox>

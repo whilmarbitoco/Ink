@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:controller="com.whilmarbitoco.inkspace.view.controller.user.AddressController" prefHeight="410.0" prefWidth="587.0" stylesheets="@css/profile.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+
+    <HBox alignment="CENTER_LEFT" prefHeight="411.0" prefWidth="594.0">
+        <VBox prefHeight="425.0" prefWidth="211.0" spacing="5" styleClass="left__pane">
+            <VBox alignment="CENTER" prefHeight="214.0" prefWidth="195.0">
+                <ImageView fx:id="profileImage" fitHeight="196.0" fitWidth="192.0" styleClass="profile__img">
+                    <Image url="@img/camus.jpg" />
+                </ImageView>
+            </VBox>
+            <VBox alignment="TOP_RIGHT" prefHeight="168.0" prefWidth="195.0" spacing="10">
+                <Button onAction="#switchToProfile" prefHeight="39.0" prefWidth="181.0" styleClass="nav__btn" text="Personal Information" />
+                <VBox alignment="CENTER_RIGHT" prefHeight="39.0" prefWidth="192.0" styleClass="btn__container">
+                    <Button prefHeight="39.0" prefWidth="181.0" styleClass="active" text="Address Information" />
+                </VBox>
+            </VBox>
+        </VBox>
+        <Pane prefWidth="10" />
+        <VBox alignment="CENTER_LEFT" prefHeight="388.0" prefWidth="330.0" spacing="15" styleClass="right__pane">
+            <Label prefHeight="19.0" prefWidth="125.0" styleClass="title__page" text="Billing Address" />
+            <VBox alignment="TOP_CENTER" prefHeight="248.0" prefWidth="330.0" spacing="10">
+
+
+                <VBox onMouseClicked="#addressOneAction" spacing="5" styleClass="work__input">
+                    <Label fx:id="labelOne" text="Home Address" styleClass="inputLabel" />
+                    <HBox>
+                        <Label fx:id="addressOne" text="123 St. Mankilam, Tagum City, Davao Del Norte" />
+                    </HBox>
+                </VBox>
+                <VBox onMouseClicked="#addressTwoAction" spacing="5" styleClass="work__input">
+                    <Label fx:id="labelTwo" text="Work Address" styleClass="inputLabel" />
+                    <HBox>
+                        <Label fx:id="addressTwo" text="123 St. Mankilam, Tagum City, Davao Del Norte" />
+                    </HBox>
+                </VBox>
+
+            </VBox>
+        </VBox>
+    </HBox>
+
+</VBox>

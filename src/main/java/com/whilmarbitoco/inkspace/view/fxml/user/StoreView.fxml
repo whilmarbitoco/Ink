@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox prefHeight="576.0" prefWidth="894.0" stylesheets="@css/nav.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.whilmarbitoco.inkspace.view.controller.user.GenreController">
+<VBox prefHeight="576.0" prefWidth="894.0" stylesheets="@css/nav.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.whilmarbitoco.inkspace.view.controller.user.StoreController">
 
     <HBox alignment="CENTER" prefHeight="51.0" prefWidth="771.0" styleClass="navbar">
         <ImageView fitHeight="52.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
@@ -23,7 +23,7 @@
 
             <VBox alignment="TOP_CENTER" prefHeight="499.0" prefWidth="73.0">
                 <VBox alignment="TOP_CENTER" prefHeight="379.0" prefWidth="59.0" spacing="13" styleClass="sidebar">
-                    <Button onMouseClicked="#gotoBook" styleClass="nav__btn">
+                    <Button styleClass="nav__btn" onMouseClicked="#gotoBook" >
                         <tooltip>
                             <Tooltip text="Books" />
                         </tooltip>
@@ -34,7 +34,7 @@
                         </graphic>
                     </Button>
 
-                    <Button styleClass="nav__btn">
+                    <Button onMouseClicked="#gotoGenre" styleClass="nav__btn">
                         <tooltip>
                             <Tooltip text="Genres" />
                         </tooltip>
@@ -56,7 +56,7 @@
                        </graphic>
                    </Button>
 
-                    <Button onMouseClicked="#gotoStore" styleClass="nav__btn">
+                    <Button styleClass="nav__btn">
                         <tooltip>
                             <Tooltip text="Stores" />
                         </tooltip>
@@ -92,14 +92,22 @@
 
         </HBox>
 
-       <VBox prefHeight="519.0" prefWidth="799.0" spacing="10">
+       <VBox prefHeight="492.0" prefWidth="810.0" spacing="10">
 
-           <VBox prefHeight="510.0" prefWidth="810.0" spacing="8">
-               <Label styleClass="title__col" text="Genre List">
-               <font>
-                  <Font size="13.0" />
-               </font></Label>
-               <ScrollPane prefHeight="465.0" prefWidth="810.0">
+           <VBox prefHeight="567.0" prefWidth="810.0" spacing="8">
+             <HBox alignment="CENTER" prefHeight="36.0" prefWidth="810.0">
+                 <Label styleClass="title__col" text="Store List">
+                     <font>
+                         <Font size="13.0" />
+                     </font>
+                 </Label>
+                 <Pane prefHeight="31.0" prefWidth="597.0" />
+                 <VBox>
+                     <Button fx:id="createStoreBtn" onAction="#createStore" prefHeight="28.0" prefWidth="124.0" styleClass="store__btn" text="Create Store" />
+                     <Button fx:id="myStoreBtn" managed="false" onAction="#myStore" prefHeight="28.0" prefWidth="124.0" styleClass="store__btn" text="My Store" visible="false" />
+                 </VBox>
+             </HBox>
+               <ScrollPane prefHeight="485.0" prefWidth="810.0">
                    <GridPane fx:id="gridOne" hgap="10">
                        <columnConstraints>
                            <ColumnConstraints hgrow="SOMETIMES" />

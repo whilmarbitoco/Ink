@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:controller="com.whilmarbitoco.inkspace.view.controller.user.CreateStoreController" prefHeight="124.0" prefWidth="371.0" spacing="10" styleClass="container" stylesheets="@css/create.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+    <Label fx:id="label" styleClass="input__label" text="Create Store" />
+    <TextField fx:id="storeField" promptText="Enter store name" />
+    <HBox alignment="TOP_RIGHT" spacing="7">
+        <Button onAction="#cancelAction" styleClass="cancel__btn"  prefHeight="37.0" prefWidth="98.0" text="Cancel" />
+        <Button onAction="#createAction" styleClass="btn" prefHeight="37.0" prefWidth="98.0" text="Create Store" />
+    </HBox>
+</VBox>

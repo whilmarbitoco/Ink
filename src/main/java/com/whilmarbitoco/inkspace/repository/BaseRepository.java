@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class Repository<T> {
+public class BaseRepository<T> {
 
     private final Connection connection = DBConnection.getConnection();
 
@@ -25,7 +25,7 @@ public class Repository<T> {
     protected String tableName;
     protected List<String> columns;
 
-    public Repository(Class<T> type) {
+    public BaseRepository(Class<T> type) {
         this.entityManager = new EntityManager<>(type);
         this.builder = new Builder();
         this.mapper = new Mapper<>(type);

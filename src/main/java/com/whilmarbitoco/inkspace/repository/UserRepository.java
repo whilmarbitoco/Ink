@@ -6,7 +6,7 @@ import com.whilmarbitoco.inkspace.model.User;
 import java.util.List;
 import java.util.Optional;
 
-public class UserRepository extends Repository<User> {
+public class UserRepository extends BaseRepository<User> {
 
     private final RoleRepository roleRepository = new RoleRepository();
 

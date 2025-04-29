@@ -1,9 +1,12 @@
 package com.whilmarbitoco.inkspace.view.controller;
 
+import com.whilmarbitoco.inkspace.utils.ViewHandler;
 import com.whilmarbitoco.inkspace.viewmodel.BaseViewModel;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 import java.util.Optional;
 
@@ -28,7 +31,8 @@ abstract public class BaseController {
 
     protected abstract void bindView();
 
-    public void gotoProfile(MouseEvent mouseEvent) {
+    public void gotoProfile(MouseEvent mouseEvent)  {
+        ViewHandler.openChildView("user/ProfileView");
     }
 
     public void gotoBook(MouseEvent mouseEvent) {
@@ -44,6 +48,7 @@ abstract public class BaseController {
     }
 
     public void gotoStore(MouseEvent mouseEvent) {
+        viewModel.switchTo("user/StoreView");
     }
 
     public void gotoCart(MouseEvent mouseEvent) {
@@ -78,5 +83,10 @@ abstract public class BaseController {
         alert.setTitle(title);
         alert.setHeaderText(message);
         alert.showAndWait();
+    }
+
+    public void close(Label label) {
+        Stage stage = (Stage) label.getScene().getWindow();
+        stage.close();
     }
 }

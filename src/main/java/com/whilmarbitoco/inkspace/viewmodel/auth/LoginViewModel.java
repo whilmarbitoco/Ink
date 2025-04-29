@@ -1,8 +1,10 @@
 package com.whilmarbitoco.inkspace.viewmodel.auth;
 
+import com.whilmarbitoco.inkspace.model.Session;
 import com.whilmarbitoco.inkspace.model.User;
 import com.whilmarbitoco.inkspace.repository.SessionRepository;
 import com.whilmarbitoco.inkspace.repository.UserRepository;
+import com.whilmarbitoco.inkspace.store.UserStore;
 import com.whilmarbitoco.inkspace.utils.EmailValidator;
 import com.whilmarbitoco.inkspace.utils.Hasher;
 import com.whilmarbitoco.inkspace.utils.ViewHandler;
@@ -11,6 +13,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 import java.util.Optional;
+import java.util.UUID;
 
 public class LoginViewModel extends BaseViewModel {
 
@@ -20,6 +23,7 @@ public class LoginViewModel extends BaseViewModel {
 
 //    Repos
     private final UserRepository userRepo = new UserRepository();
+    private final SessionRepository sessionRepo = new SessionRepository();
 
 
     public void login() {
@@ -44,6 +48,9 @@ public class LoginViewModel extends BaseViewModel {
             error.setValue("Invalid Email or Password.");
             return;
         }
+
+        sessionRepo.create(new Session(user.getUserID(), UUID.randomUUID().toString()));
+        UserStore.getInstance().setUser(user);
         ViewHandler.handleRole(user.getRoleID());
 
     }

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox stylesheets="@css/seller.css" prefHeight="450.0" prefWidth="732.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<VBox styleClass="side__bar" alignment="TOP_CENTER" prefHeight="450.0" prefWidth="117.0" spacing="10">
+    <Pane prefHeight="10" />
+    <Label styleClass="logo__text" text="INK" />
+    <VBox alignment="CENTER" prefHeight="199.0" prefWidth="117.0" spacing="20">
+        <Button prefHeight="25.0" prefWidth="104.0" text="Dashboard">
+            <graphic>
+            </graphic>
+        </Button>
+        <Button text="Dashboard" prefHeight="25.0" prefWidth="104.0" >
+            <graphic>
+            </graphic>
+        </Button>
+        <Button text="Dashboard" prefHeight="25.0" prefWidth="104.0" >
+            <graphic>
+            </graphic>
+        </Button>
+    </VBox>
+</VBox>
+    <VBox prefHeight="450.0" prefWidth="602.0">
+        <HBox styleClass="nav__bar">
+            <Label styleClass="nav__text" text="My Store" />
+        </HBox>
+
+        <VBox>
+            <VBox>
+                <HBox>
+                    <Label text="Store Name" />
+                    <Button text="edit" />
+                </HBox>
+                <TextField promptText="Store Name" />
+            </VBox>
+            <HBox>
+                <VBox>
+                    <Label text="Monthly Sales" />
+<!--                    <PieChart />-->
+                </VBox>
+                <VBox>
+                    <Label text="Most Sold Books" />
+<!--                    <LineChart />-->
+                </VBox>
+            </HBox>
+        </VBox>
+    </VBox>
+</HBox>

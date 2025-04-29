@@ -1,0 +1,51 @@
+
+.container {
+    -fx-padding: 12px;
+}
+
+.input__label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+TextField {
+   -fx-padding: 8px;
+   -fx-cursor: hand;
+   -fx-border-color: #CFCFCF;
+   -fx-border-width: 1px;
+   -fx-border-radius: 5px;
+}
+
+TextField:hover {
+    -fx-border-color: #F60EE7;
+}
+
+.cancel__btn {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #F60EE7;
+    -fx-font-weight: bold;
+    -fx-border-color: #F60EE7;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.cancel__btn:hover {
+    -fx-background-color: #F60EE7;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+    -fx-border-color: #F60EE7;
+}
+
+.btn {
+    -fx-background-color: #F60EE7;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.btn:hover {
+    -fx-background-color: #D402C7;
+}

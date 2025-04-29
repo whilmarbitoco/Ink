@@ -1,5 +1,6 @@
 package com.whilmarbitoco.inkspace.view.controller.user;
 
+import com.whilmarbitoco.inkspace.utils.ViewHandler;
 import com.whilmarbitoco.inkspace.view.controller.BaseController;
 import com.whilmarbitoco.inkspace.viewmodel.user.ProfileViewModel;
 import javafx.beans.property.StringProperty;
@@ -44,9 +45,6 @@ public class ProfileController extends BaseController {
         profileImage.setImage(new Image(new File(viewModel.imageProperty().get()).toURI().toString()));
     }
 
-    public void gotoAddress(ActionEvent actionEvent) {
-    }
-
     public void updateAction(ActionEvent actionEvent) {
         viewModel.update();
     }
@@ -76,5 +74,9 @@ public class ProfileController extends BaseController {
             updateBtn.setManaged(true);
             updateBtn.setVisible(true);
         });
+    }
+
+    public void switchToAddress(ActionEvent actionEvent) {
+        ViewHandler.openChildView("user/AddressView");
     }
 }

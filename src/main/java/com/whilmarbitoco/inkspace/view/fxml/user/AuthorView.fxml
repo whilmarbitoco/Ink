@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox prefHeight="576.0" prefWidth="894.0" stylesheets="@nav.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.whilmarbitoco.inkspace.view.controller.user.AuthorController">
+<VBox prefHeight="576.0" prefWidth="894.0" stylesheets="@css/nav.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.whilmarbitoco.inkspace.view.controller.user.AuthorController">
 
     <HBox alignment="CENTER" prefHeight="51.0" prefWidth="771.0" styleClass="navbar">
         <ImageView fitHeight="52.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
