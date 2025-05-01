@@ -3,6 +3,7 @@ package com.whilmarbitoco.inkspace.viewmodel.user;
 import com.whilmarbitoco.inkspace.model.User;
 import com.whilmarbitoco.inkspace.repository.UserRepository;
 import com.whilmarbitoco.inkspace.store.UserStore;
+import com.whilmarbitoco.inkspace.utils.ImageHelper;
 import com.whilmarbitoco.inkspace.viewmodel.BaseViewModel;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -35,17 +36,9 @@ public class ProfileViewModel extends BaseViewModel {
         current.setLastName(lastname.get());
         current.setEmail(email.get());
 
-
-        File sourceFile = new File(image.get());
-        File destinationFile = new File("src/main/resources/" + generateRandomFileName("png"));
-
         try {
-            Files.copy(
-                    sourceFile.toPath(),
-                    destinationFile.toPath(),
-                    StandardCopyOption.REPLACE_EXISTING
-            );
-            current.setImage(destinationFile.getAbsolutePath());
+            String destination = ImageHelper.save(image.get());
+            current.setImage(destination);
             userRepository.update(current);
             message.setValue("Successfully Updated.");
         } catch (IOException e) {

@@ -3,7 +3,7 @@ package com.whilmarbitoco.inkspace.viewmodel.auth;
 import com.whilmarbitoco.inkspace.model.User;
 import com.whilmarbitoco.inkspace.repository.UserRepository;
 import com.whilmarbitoco.inkspace.utils.Validator;
-import com.whilmarbitoco.inkspace.utils.Hasher;
+import com.whilmarbitoco.inkspace.utils.HashHandler;
 import com.whilmarbitoco.inkspace.viewmodel.BaseViewModel;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -43,7 +43,7 @@ public class SignupViewModel extends BaseViewModel  {
             return;
         }
 
-        userRepo.create(new User(firstname.get(), lastname.get(), email.get(), Hasher.hash(password.get()), "", 2));
+        userRepo.create(new User(firstname.get(), lastname.get(), email.get(), HashHandler.hash(password.get()), "", 2));
         message.setValue("Login Successfully");
         switchTo("auth/LoginView");
     }

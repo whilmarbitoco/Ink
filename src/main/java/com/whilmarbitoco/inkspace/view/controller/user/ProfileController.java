@@ -1,5 +1,6 @@
 package com.whilmarbitoco.inkspace.view.controller.user;
 
+import com.whilmarbitoco.inkspace.utils.ImageHelper;
 import com.whilmarbitoco.inkspace.utils.ViewHandler;
 import com.whilmarbitoco.inkspace.view.controller.BaseController;
 import com.whilmarbitoco.inkspace.viewmodel.user.ProfileViewModel;
@@ -42,7 +43,7 @@ public class ProfileController extends BaseController {
         lastnameField.textProperty().bindBidirectional(viewModel.lastnameProperty());
         emailField.textProperty().bindBidirectional(viewModel.emailProperty());
         pathField.textProperty().bindBidirectional(viewModel.imageProperty());
-        profileImage.setImage(new Image(new File(viewModel.imageProperty().get()).toURI().toString()));
+        profileImage.setImage(ImageHelper.load(viewModel.imageProperty().get()));
     }
 
     public void updateAction(ActionEvent actionEvent) {

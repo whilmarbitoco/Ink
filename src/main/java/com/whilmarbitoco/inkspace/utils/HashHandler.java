@@ -3,7 +3,9 @@ package com.whilmarbitoco.inkspace.utils;
 
 import org.mindrot.jbcrypt.BCrypt;
 
-public class Hasher {
+import java.util.UUID;
+
+public class HashHandler {
 
     public static String hash(String text) {
         return BCrypt.hashpw(text, BCrypt.gensalt());
@@ -11,5 +13,10 @@ public class Hasher {
 
     public static boolean compare(String text, String hashed) {
         return BCrypt.checkpw(text, hashed);
+    }
+
+    public static String generateFilename(String extension) {
+        String randomName = UUID.randomUUID().toString();
+        return randomName + (extension.startsWith(".") ? extension : "." + extension);
     }
 }

@@ -22,8 +22,8 @@ public class Main extends Application {
         }
 
         UserStore.getInstance().setUser(currentUser.get());
-//        ViewHandler.handleRole(currentUser.get().getRoleID());
-        ViewHandler.openView("seller/SellerView");
+        ViewHandler.handleRole(currentUser.get().getRoleID());
+//        ViewHandler.openView("seller/SellerView");
     }
 
 

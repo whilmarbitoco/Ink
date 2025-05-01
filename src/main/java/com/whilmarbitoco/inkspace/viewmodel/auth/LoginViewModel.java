@@ -6,7 +6,7 @@ import com.whilmarbitoco.inkspace.repository.SessionRepository;
 import com.whilmarbitoco.inkspace.repository.UserRepository;
 import com.whilmarbitoco.inkspace.store.UserStore;
 import com.whilmarbitoco.inkspace.utils.Validator;
-import com.whilmarbitoco.inkspace.utils.Hasher;
+import com.whilmarbitoco.inkspace.utils.HashHandler;
 import com.whilmarbitoco.inkspace.utils.ViewHandler;
 import com.whilmarbitoco.inkspace.viewmodel.BaseViewModel;
 import javafx.beans.property.SimpleStringProperty;
@@ -43,7 +43,7 @@ public class LoginViewModel extends BaseViewModel {
             return;
         }
 
-        if (!Hasher.compare(password.get(), user.getPassword()))  {
+        if (!HashHandler.compare(password.get(), user.getPassword()))  {
             error.setValue("Invalid Email or Password.");
             return;
         }

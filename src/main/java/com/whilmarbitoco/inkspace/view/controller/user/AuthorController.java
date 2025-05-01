@@ -1,5 +1,6 @@
 package com.whilmarbitoco.inkspace.view.controller.user;
 
+import com.whilmarbitoco.inkspace.model.Author;
 import com.whilmarbitoco.inkspace.utils.ViewHandler;
 import com.whilmarbitoco.inkspace.view.controller.BaseController;
 import com.whilmarbitoco.inkspace.viewmodel.user.AuthorViewModel;
@@ -12,19 +13,20 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
+import java.util.List;
+
 public class AuthorController extends BaseController  {
 
 
     public Label usernameLabel;
     public TextField searchField;
-    public GridPane gridOne;
-    public GridPane gridTwo;
+    public GridPane grid;
 
     private final AuthorViewModel viewModel = new AuthorViewModel();
 
     public void initialize() {
         Platform.runLater(() -> {usernameLabel.requestFocus();});
-        initDate();
+        initData();
         bindView();
         setViewModel(viewModel);
         usernameLabel.setText(viewModel.getCurrentUser().getFirstName() + " " + viewModel.getCurrentUser().getLastName());
@@ -40,35 +42,28 @@ public class AuthorController extends BaseController  {
         });
     }
 
-    private void initDate() {
-        gridOne.getColumnConstraints().clear();
-        gridOne.getRowConstraints().clear();
-        gridTwo.getColumnConstraints().clear();
-        gridTwo.getRowConstraints().clear();
+    private void initData() {
+        grid.getColumnConstraints().clear();
+        grid.getRowConstraints().clear();
 
         try {
-
-            for (int i = 0; i < 4; i++) {
-
-                FXMLLoader loader = ViewHandler.getLoader("user/AuthorItem");
-                VBox pane  = loader.load();
-                gridOne.add(pane, i, 0);
-            }
-
             int row = 0;
             int col = 0;
+            List<Author> allAuthors = viewModel.getAuthors();
 
-            for (int i = 0; i < 10; i++) {
+            for (Author author : allAuthors) {
                 if (col == 4) {
                     col = 0;
                     row++;
                 }
                 FXMLLoader loader = ViewHandler.getLoader("user/AuthorItem");
                 VBox pane  = loader.load();
-                gridTwo.add(pane, col++, row);
+                AuthorItemController controller = loader.getController();
+                controller.setAuthor(author);
+                grid.add(pane, col++, row);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 

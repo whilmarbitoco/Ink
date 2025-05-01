@@ -31,11 +31,6 @@ abstract public class BaseViewModel {
         return error;
     }
 
-    public String generateRandomFileName(String extension) {
-        String randomName = UUID.randomUUID().toString();
-        return randomName + (extension.startsWith(".") ? extension : "." + extension);
-    }
-
     public StringProperty messageProperty() {
         return message;
     }

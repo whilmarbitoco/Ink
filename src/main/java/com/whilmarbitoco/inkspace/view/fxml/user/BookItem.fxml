@@ -18,9 +18,4 @@
 
     <Label alignment="TOP_LEFT" prefHeight="45.0" prefWidth="155.0" styleClass="card__description" text="Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature" wrapText="true" />
 
-
-<!--    <HBox alignment="CENTER" prefHeight="50.0" prefWidth="167.0" spacing="20">-->
-<!--        -->
-<!--        <Button prefHeight="19.0" prefWidth="71.0" styleClass="btn" text="View" />-->
-<!--    </HBox>-->
 </VBox>

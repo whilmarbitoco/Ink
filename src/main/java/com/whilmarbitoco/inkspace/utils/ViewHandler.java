@@ -72,7 +72,8 @@ public class ViewHandler {
                 break;
 
             case 3:
-                openView("user/StoreView");
+                openView("user/BookView");
+//                openView("seller/SellerView");
                 break;
         }
     }
