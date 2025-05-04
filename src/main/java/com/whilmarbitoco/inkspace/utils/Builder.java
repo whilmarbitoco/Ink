@@ -16,6 +16,23 @@ public class Builder {
         return this;
     }
 
+    public Builder max(String primary, String tableName) {
+         query.setLength(0);
+        query.append("SELECT MAX(").append(primary).append(") as count ");
+        query.append("FROM ").append(tableName);
+        return this;
+    }
+
+    public Builder count(String tableName) {
+        query.setLength(0);
+        query.append("SELECT COUNT(*) AS `count` FROM ").append(tableName);
+        return this;
+    }
+
+    public Builder raw(String condition) {
+        query.append(condition);
+        return this;
+    }
 
     public Builder select(String tableName) {
         query.setLength(0);

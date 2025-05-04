@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="440.0" prefWidth="712.0" spacing="10" styleClass="container" stylesheets="@create.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.whilmarbitoco.inkspace.view.controller.seller.create.BookCoverController">
+
+    <Label styleClass="header__text" text="Book Cover and Author" />
+    <Pane prefHeight="45.0" prefWidth="692.0" />
+   <HBox alignment="CENTER" prefHeight="371.0" prefWidth="664.0" spacing="10">
+       <VBox prefHeight="301.0" prefWidth="288.0" spacing="15">
+           <VBox spacing="5">
+               <Label styleClass="input__label" text="Selected Cover(s)" />
+               <HBox>
+                   <ScrollPane prefHeight="225.0" prefWidth="284.0">
+                       <GridPane vgap="3" fx:id="gridOne">
+                           <columnConstraints>
+                               <ColumnConstraints hgrow="SOMETIMES" />
+                           </columnConstraints>
+                       </GridPane>
+                   </ScrollPane>
+               </HBox>
+           </VBox>
+
+           <VBox spacing="5">
+               <Label styleClass="input__label" text="Book Cover" />
+               <ChoiceBox fx:id="coverBox" prefHeight="42.0" prefWidth="288.0" />
+           </VBox>
+       </VBox>
+
+       <VBox prefHeight="206.0" prefWidth="342.0" spacing="15">
+           <VBox prefHeight="317.0" prefWidth="300.0" spacing="15">
+               <VBox spacing="5">
+                   <Label styleClass="input__label" text="Selected Author(s)" />
+                   <HBox prefWidth="302.0">
+                       <ScrollPane prefHeight="225.0" prefWidth="284.0">
+                           <GridPane vgap="3" fx:id="gridTwo">
+                               <columnConstraints>
+                                   <ColumnConstraints hgrow="SOMETIMES" />
+                               </columnConstraints>
+                           </GridPane>
+                       </ScrollPane>
+                   </HBox>
+               </VBox>
+
+               <VBox spacing="5">
+                   <Label styleClass="input__label" text="Book Author" />
+                   <ComboBox onAction="#authorAction" editable="true" fx:id="authorBox" prefHeight="42.0" prefWidth="288.0" />
+               </VBox>
+           </VBox>
+       </VBox>
+   </HBox>
+    <Pane prefHeight="50" />
+    <HBox alignment="CENTER_RIGHT" spacing="5">
+        <Button onAction="#cancelAction" prefHeight="26.0" prefWidth="76.0" styleClass="cancel__btn" text="Cancel" />
+        <Button onAction="#nextAction" prefHeight="26.0" prefWidth="76.0" styleClass="action__btn" text="Next" />
+    </HBox>
+</VBox>

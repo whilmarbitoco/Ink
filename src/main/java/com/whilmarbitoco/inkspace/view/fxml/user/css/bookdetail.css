@@ -1,0 +1,94 @@
+
+.header__content {
+    -fx-padding: 10px 0px;
+}
+
+.title__text {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+.store__text {
+    -fx-font-size: 10px;
+    -fx-font-font-style: italic;
+    -fx-text-fill: #898989;
+}
+
+.desc__text {
+    -fx-font-size: 11px;
+    -fx-text-fill: #555555;
+}
+
+.price__text {
+    -fx-font-size: 19px;
+}
+
+.avg__text {
+    -fx-font-size: 15px;
+}
+
+.qtyContainer {
+    -fx-border-color: #333333;
+    -fx-border-radius: 5px;
+}
+
+.qtyContainer Label {
+    -fx-text-fill: #333333;
+}
+
+.qtyContainer Button {
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    -fx-text-fill: #333333;
+    -fx-border-color: none;
+    -fx-background-color: transparent;
+}
+
+.ratings__container {
+    -fx-padding: 0px 15px;
+}
+
+.header {
+    -fx-font-size: 13px;
+}
+
+
+.cancel__btn {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #F60EE7;
+    -fx-font-weight: bold;
+    -fx-border-color: #F60EE7;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.cancel__btn:hover {
+    -fx-background-color: #F60EE7;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+    -fx-border-color: #F60EE7;
+}
+
+.btn {
+    -fx-background-color: #F60EE7;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.btn:hover {
+    -fx-background-color: #D402C7;
+}
+
+ChoiceBox {
+    -fx-background-color: transparent;
+    -fx-text-fill: #333333;
+    -fx-font-weight: bold;
+    -fx-border-color: #333333;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand;
+}

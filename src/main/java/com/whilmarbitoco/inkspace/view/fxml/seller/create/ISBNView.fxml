@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox alignment="CENTER" prefHeight="42.0" prefWidth="338.0" spacing="10" stylesheets="@item.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.whilmarbitoco.inkspace.view.controller.seller.create.ISBNController">
+    <VBox prefHeight="38.0" prefWidth="268.0" spacing="3">
+        <Label fx:id="text" prefHeight="17.0" prefWidth="228.0" text="Test" />
+        <Label fx:id="isbn" prefHeight="12.0" prefWidth="290.0" styleClass="isbn" text="12001203939" />
+    </VBox>
+    <Button onAction="#delete">
+    <graphic>
+        <ImageView fitHeight="20" fitWidth="20">
+            <Image preserveRatio="true" url="@image/delete.png" />
+        </ImageView>
+    </graphic>
+</Button>
+</HBox>

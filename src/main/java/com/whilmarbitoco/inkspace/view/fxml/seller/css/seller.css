@@ -85,3 +85,25 @@
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
 }
+
+.v__content {
+    -fx-padding: 15px
+}
+
+.btn {
+    -fx-cursor: hand;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: normal;
+    -fx-cursor: hand;
+    -fx-background-color: #738BFF;
+    -fx-background-insets: 0;
+    -fx-padding: 5px 10px;
+    -fx-border-width: 0;
+    -fx-border-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.btn:hover {
+    -fx-background-color: #6174D4;
+}

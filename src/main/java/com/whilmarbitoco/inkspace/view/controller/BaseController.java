@@ -2,17 +2,23 @@ package com.whilmarbitoco.inkspace.view.controller;
 
 import com.whilmarbitoco.inkspace.utils.ViewHandler;
 import com.whilmarbitoco.inkspace.viewmodel.BaseViewModel;
+import javafx.animation.PauseTransition;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
+import java.io.File;
 import java.util.Optional;
 
 abstract public class BaseController {
 
     private BaseViewModel viewModel;
+    protected PauseTransition pause = new PauseTransition(Duration.millis(300));
 
     protected void setViewModel(BaseViewModel viewModel) {
         this.viewModel = viewModel;
@@ -54,6 +60,19 @@ abstract public class BaseController {
     public void gotoCart(MouseEvent mouseEvent) {
     }
 
+    public String fileChooser(Node node) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Select Image");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg", "*.gif")
+        );
+
+        Stage stage = (Stage) node.getScene().getWindow();
+        File selectedFile = fileChooser.showOpenDialog(stage);
+
+        return selectedFile.getAbsolutePath();
+    }
+
     public void logout() {
         boolean confirm = showConfirmation("Logout", "Do you really wanna logout?");
 
@@ -85,8 +104,8 @@ abstract public class BaseController {
         alert.showAndWait();
     }
 
-    public void close(Label label) {
-        Stage stage = (Stage) label.getScene().getWindow();
+    public void close(Node node) {
+        Stage stage = (Stage) node.getScene().getWindow();
         stage.close();
     }
 }

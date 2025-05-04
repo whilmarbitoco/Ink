@@ -68,4 +68,9 @@ public class Author {
     public void setImage(String image) {
         this.image = image;
     }
+
+    @Override
+    public String toString() {
+        return this.name;
+    }
 }

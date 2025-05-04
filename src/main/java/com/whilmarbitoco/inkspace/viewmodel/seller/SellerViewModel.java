@@ -4,6 +4,8 @@ import com.whilmarbitoco.inkspace.model.Store;
 import com.whilmarbitoco.inkspace.model.StoreAnalytics;
 import com.whilmarbitoco.inkspace.repository.StoreAnalyticsRepository;
 import com.whilmarbitoco.inkspace.repository.StoreRepository;
+import com.whilmarbitoco.inkspace.store.StoreStore;
+import com.whilmarbitoco.inkspace.store.UserStore;
 import com.whilmarbitoco.inkspace.viewmodel.BaseViewModel;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -23,6 +25,8 @@ public class SellerViewModel extends BaseViewModel {
 
     public SellerViewModel() {
         fetch();
+        Store current = storeRepository.getByUser(UserStore.getInstance().getUser().getUserID());
+        StoreStore.getInstance().setStore(current);
     }
 
     private void fetch() {

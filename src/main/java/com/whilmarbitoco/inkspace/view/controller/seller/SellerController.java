@@ -47,4 +47,8 @@ public class SellerController extends BaseController {
     public void editStoreAction(ActionEvent actionEvent) {
         viewModel.update();
     }
+
+    public void bookAction(ActionEvent actionEvent) {
+        viewModel.switchTo("seller/BookView");
+    }
 }

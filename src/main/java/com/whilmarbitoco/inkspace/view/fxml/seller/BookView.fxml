@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<HBox fx:controller="com.whilmarbitoco.inkspace.view.controller.seller.BookController" prefHeight="450.0" prefWidth="772.0" stylesheets="@css/seller.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<HBox prefHeight="450.0" prefWidth="772.0" stylesheets="@css/seller.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.whilmarbitoco.inkspace.view.controller.seller.BookController">
 <VBox alignment="TOP_CENTER" prefHeight="450.0" prefWidth="157.0" spacing="10" styleClass="side__bar">
     <Pane prefHeight="10" />
     <Label styleClass="logo__text" text="INK" />
@@ -41,12 +40,24 @@
     </VBox>
 </VBox>
     <VBox prefHeight="450.0" prefWidth="625.0">
-        <HBox alignment="CENTER_LEFT" prefHeight="87.0" prefWidth="620.0" styleClass="nav__bar">
+        <HBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="620.0" styleClass="nav__bar">
             <Label styleClass="nav__text" text="My Store" />
+            <Pane prefHeight="26.0" prefWidth="463.0" />
+            <Button onAction="#exitStore" styleClass="edit__btn" text="Exit Store" />
         </HBox>
 
-        <VBox prefHeight="419.0" prefWidth="620.0">
-  
+        <VBox prefHeight="419.0" prefWidth="620.0" spacing="10" styleClass="v__content">
+            <HBox alignment="CENTER_RIGHT">
+                <Button onAction="#addBookAction" styleClass="btn" text="Add Book" />
+            </HBox>
+            <TableView fx:id="tableView" onMouseClicked="#tableMouseAction">
+                <columns>
+                    <TableColumn fx:id="tableID" prefWidth="90" text="ID" />
+                    <TableColumn fx:id="tableTitle" prefWidth="300" text="Title" />
+                    <TableColumn fx:id="tablePrice" prefWidth="100" text="Price" />
+                    <TableColumn fx:id="tableQty" prefWidth="100" text="Quantity" />
+                </columns>
+            </TableView>
         </VBox>
     </VBox>
 </HBox>

@@ -51,22 +51,14 @@ public class ProfileController extends BaseController {
     }
 
     public void openFile(ActionEvent mouseEvent) {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Select Image");
-        fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg", "*.gif")
-        );
+        String path = fileChooser(pathField);
 
-        Stage stage = (Stage) pathField.getScene().getWindow();
-        File selectedFile = fileChooser.showOpenDialog(stage);
-
-        if (selectedFile != null) {
-            pathField.setText(selectedFile.getName());
-            System.out.println(selectedFile.getAbsolutePath());
-            viewModel.imageProperty().setValue(selectedFile.getAbsolutePath());
-        } else {
-            pathField.setText("No file selected");
+        if (path == null) {
+            pathField.setText("No such file selected");
+            return;
         }
+        pathField.setText(path);
+        viewModel.imageProperty().setValue(path);
     }
 
     private void listen(StringProperty property) {

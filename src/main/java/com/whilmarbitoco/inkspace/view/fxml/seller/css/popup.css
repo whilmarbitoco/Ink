@@ -1,0 +1,27 @@
+
+.container {
+    -fx-padding: 12px;
+}
+
+.header {
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+}
+
+Button {
+    -fx-font-weight: normal;
+    -fx-cursor: hand;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 5px;
+    -fx-border-width: 0;
+    -fx-border-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.edit__btn {
+    -fx-background-color: #738BFF;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+}

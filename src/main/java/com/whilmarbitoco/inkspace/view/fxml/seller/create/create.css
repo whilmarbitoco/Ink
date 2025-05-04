@@ -1,0 +1,73 @@
+.container {
+    -fx-padding: 15px;
+}
+
+.header__text {
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+}
+
+TextField {
+   -fx-cursor: hand;
+   -fx-border-color: #CFCFCF;
+   -fx-border-width: 1px;
+   -fx-border-radius: 5px;
+}
+
+TextField:hover, .input__field:hover {
+    -fx-border-color: #738BFF;
+}
+
+.input__label {
+    -fx-font-size: 12px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #4A4D4E;
+}
+
+.file__input {
+    -fx-cursor: hand;
+    -fx-background-color: #FFFFFF;
+    -fx-spacing: 5px;
+    -fx-border-width: 2px;
+    -fx-border-color: #CFCFCF;
+    -fx-border-radius: 5px;
+}
+
+.file__input:hover {
+    -fx-border-color: #738BFF;
+}
+
+.file__upload {
+    -fx-background-color: #CFCFCF;
+}
+
+.file__upload, .file__path {
+   -fx-padding: 8px;
+}
+
+.cancel__btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #898C8D;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #898C8D;
+    -fx-cursor: hand;
+}
+
+.add_plus__btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #738BFF;
+    -fx-border-color: #738BFF;
+    -fx-border-radius: 5px;
+}
+
+.action__btn {
+    -fx-background-color: #738BFF;
+    -fx-text-fill: #FFFFFF;
+    -fx-border-color: #738BFF;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand;
+}

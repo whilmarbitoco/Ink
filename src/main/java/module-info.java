@@ -7,6 +7,7 @@ module com.whilmarbitoco.inkspace {
     requires jbcrypt;
     requires jdk.jshell;
 
+    opens com.whilmarbitoco.inkspace.model to javafx.base;
 
     opens com.whilmarbitoco.inkspace.view.controller.auth to javafx.fxml;
     exports com.whilmarbitoco.inkspace.view.controller.auth;
@@ -16,6 +17,9 @@ module com.whilmarbitoco.inkspace {
 
     opens com.whilmarbitoco.inkspace.view.controller.seller to javafx.fxml;
     exports com.whilmarbitoco.inkspace.view.controller.seller;
+
+    opens com.whilmarbitoco.inkspace.view.controller.seller.create to javafx.fxml;
+    exports com.whilmarbitoco.inkspace.view.controller.seller.create;
 
     opens com.whilmarbitoco.inkspace to javafx.fxml;
     exports com.whilmarbitoco.inkspace;
