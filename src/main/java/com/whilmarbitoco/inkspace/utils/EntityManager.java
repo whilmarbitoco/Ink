@@ -36,11 +36,13 @@ public class EntityManager<T> {
     }
 
     public Optional<String> getPrimaryKey() {
-        return Arrays.stream(type.getDeclaredFields())
-                .filter(field -> field.getAnnotation(Primary.class) != null)
-                .map(Field::getName).findFirst();
+        for (Field field : type.getDeclaredFields()) {
+            Primary primary = field.getAnnotation(Primary.class);
+            Column col = field.getAnnotation(Column.class);
+            if (primary != null && col != null) return Optional.of(col.name());
+        }
 
-
+        return Optional.empty();
     }
 
     private Field findPrimaryField(Class<?> clazz) {

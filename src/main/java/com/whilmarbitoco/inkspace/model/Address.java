@@ -105,4 +105,12 @@ public class Address {
     public void setPostal(String postal) {
         this.postal = postal;
     }
+
+    public String formattedAddress() {
+        return getStreet() + ", "
+                + getBarangay() + ", "
+                + getCity() + ", "
+                + getRegion() + ", "
+                + getPostal();
+    }
 }

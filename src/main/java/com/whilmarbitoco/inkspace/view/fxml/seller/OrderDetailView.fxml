@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:controller="com.whilmarbitoco.inkspace.view.controller.seller.OrderDetailController" prefHeight="497.0" prefWidth="348.0" spacing="5" styleClass="container" stylesheets="@css/popup.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+
+  <VBox spacing="2">
+      <Label styleClass="header__text" text="Buyer Information" />
+      <HBox spacing="5">
+          <ImageView fx:id="userImg" fitHeight="200.0" fitWidth="150.0">
+              <Image preserveRatio="true" url="@img/cover.jpg" />
+          </ImageView>
+          <VBox spacing="5">
+              <Label fx:id="username" styleClass="header" text="John Doe" />
+
+              <VBox spacing="2" styleClass="address">
+                  <Label fx:id="addressLabelOne" styleClass="text__label" text="Home Address" />
+                  <Label fx:id="addressOne" alignment="TOP_LEFT" prefHeight="24.0" prefWidth="169.0" styleClass="address__text" text="123 St., Mankilam, Tagum City, Davao Region, Philippines" wrapText="true" />
+              </VBox>
+              <VBox spacing="2" styleClass="address">
+                  <Label fx:id="addressLabelTwo" styleClass="text__label" text="Home Address" />
+                  <Label fx:id="addressTwo" alignment="TOP_LEFT" prefHeight="31.0" prefWidth="169.0" styleClass="address__text" text="123 St., Mankilam, Tagum City, Davao Region, Philippines" wrapText="true" />
+              </VBox>
+
+              <VBox>
+                  <Label styleClass="text__label" text="Contact" />
+                  <Label fx:id="emailField" styleClass="text__label" text="johndoe@gmail.com" />
+              </VBox>
+          </VBox>
+      </HBox>
+  </VBox>
+    <Pane prefHeight="13.0" prefWidth="348.0" />
+   <VBox spacing="2">
+       <Label styleClass="header__text" text="Book Information" />
+       <HBox spacing="5">
+           <ImageView fx:id="bookImg" fitHeight="148.0" fitWidth="111.0">
+               <Image preserveRatio="true" url="@img/cover.jpg" />
+           </ImageView>
+           <VBox spacing="2">
+               <Label fx:id="titleField" styleClass="header" text="Crime and Punishment" />
+
+               <Label fx:id="desField" styleClass="address__text" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud." wrapText="true" />
+
+               <VBox>
+                   <Label styleClass="text__label" text="Edition:" />
+                   <Label fx:id="editionField" styleClass="edition__text" text="Kindle Edition" />
+               </VBox>
+               <VBox>
+                   <Label styleClass="text__label" text="Cover:" />
+                   <Label fx:id="coverField" styleClass="edition__text" text="Paperback" />
+               </VBox>
+               <HBox>
+                   <VBox alignment="CENTER">
+                       <Label styleClass="text__label" text="Total Price:" />
+                       <Label fx:id="priceField" text="200" />
+                   </VBox>
+                   <Pane prefWidth="50" />
+                   <VBox alignment="CENTER">
+                       <Label styleClass="text__label" text="Quantity:" />
+                       <Label fx:id="qtyField" text="2" />
+                   </VBox>
+               </HBox>
+           </VBox>
+       </HBox>
+   </VBox>
+    <Pane prefHeight="21.0" prefWidth="324.0" />
+    <HBox alignment="CENTER_RIGHT" spacing="5">
+        <Button onAction="#sellAction" styleClass="edit__btn" prefHeight="30.0" prefWidth="100.0" text="Sell" />
+    </HBox>
+</VBox>

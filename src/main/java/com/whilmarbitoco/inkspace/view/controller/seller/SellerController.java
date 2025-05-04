@@ -51,4 +51,8 @@ public class SellerController extends BaseController {
     public void bookAction(ActionEvent actionEvent) {
         viewModel.switchTo("seller/BookView");
     }
+
+    public void exitStore(ActionEvent actionEvent) {
+        viewModel.switchTo("user/BookView");
+    }
 }

@@ -8,12 +8,14 @@ module com.whilmarbitoco.inkspace {
     requires jdk.jshell;
 
     opens com.whilmarbitoco.inkspace.model to javafx.base;
+    opens com.whilmarbitoco.inkspace.utils to javafx.base;
 
     opens com.whilmarbitoco.inkspace.view.controller.auth to javafx.fxml;
     exports com.whilmarbitoco.inkspace.view.controller.auth;
 
     opens com.whilmarbitoco.inkspace.view.controller.user to javafx.fxml;
     exports com.whilmarbitoco.inkspace.view.controller.user;
+
 
     opens com.whilmarbitoco.inkspace.view.controller.seller to javafx.fxml;
     exports com.whilmarbitoco.inkspace.view.controller.seller;

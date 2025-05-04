@@ -17,7 +17,7 @@
                 </ImageView>
             </graphic>
         </Button>
-        <Button onAction="#bookAction" alignment="TOP_LEFT" prefHeight="32.0" prefWidth="135.0" styleClass="btn" text="Books">
+        <Button alignment="TOP_LEFT" onAction="#bookAction" prefHeight="32.0" prefWidth="135.0" styleClass="btn" text="Books">
             <graphic>
                 <ImageView fitHeight="23.0" fitWidth="38.0" preserveRatio="true">
                     <Image url="@img/package.png" />
@@ -41,8 +41,10 @@
     </VBox>
 </VBox>
     <VBox prefHeight="450.0" prefWidth="625.0">
-        <HBox alignment="CENTER_LEFT" prefHeight="87.0" prefWidth="620.0" styleClass="nav__bar">
+        <HBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="620.0" styleClass="nav__bar">
             <Label styleClass="nav__text" text="My Store" />
+            <Pane prefHeight="26.0" prefWidth="463.0" />
+            <Button onAction="#exitStore" styleClass="edit__btn" text="Exit Store" />
         </HBox>
 
         <VBox prefHeight="419.0" prefWidth="620.0">
@@ -62,7 +64,7 @@
                 </HBox>
                 <HBox alignment="CENTER" prefHeight="41.0" prefWidth="392.0" spacing="5">
                     <TextField fx:id="storeName" disable="true" editable="false" prefHeight="34.0" prefWidth="350.0" promptText="Store Name" />
-                    <Button onAction="#editStoreAction" visible="false" managed="false" fx:id="editBtn" prefHeight="31.0" prefWidth="43.0" styleClass="edit__action__btn">
+                    <Button fx:id="editBtn" managed="false" onAction="#editStoreAction" prefHeight="31.0" prefWidth="43.0" styleClass="edit__action__btn" visible="false">
                         <graphic>
                             <ImageView fitHeight="15.0" fitWidth="21.0" preserveRatio="true">
                                 <Image url="@img/check.png" />
@@ -75,22 +77,18 @@
             <VBox styleClass="chart__content">
                 <Label prefWidth="116.0" text="Statistics" />
                 <HBox prefHeight="297.0" prefWidth="620.0" spacing="10">
-                    <VBox prefHeight="287.0" prefWidth="298.0">
+                    <VBox prefHeight="275.0" prefWidth="587.0">
 
-                        <BarChart fx:id="barChart" title="Monthly Sales" prefWidth="600" prefHeight="400"
-                                  barGap="3" categoryGap="15">
+                        <BarChart fx:id="barChart" barGap="3" categoryGap="15" prefHeight="275.0" prefWidth="411.0" title="Monthly Sales">
                             <xAxis>
                                 <CategoryAxis label="Months" />
                             </xAxis>
                             <yAxis>
-                                <NumberAxis label="Sales"/>
+                                <NumberAxis label="Sales" />
                             </yAxis>
                         </BarChart>
 
 
-                    </VBox>
-                    <VBox>
-                        <PieChart fx:id="pie2Chart" layoutX="20" layoutY="20" prefHeight="251.0" prefWidth="265.0" title="Top Sold Books" />
                     </VBox>
                 </HBox>
             </VBox>

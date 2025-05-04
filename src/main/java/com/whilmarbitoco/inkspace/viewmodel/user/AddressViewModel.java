@@ -40,24 +40,14 @@ public class AddressViewModel extends BaseViewModel {
             Address address = addresses.getFirst();
             addOne = address;
             labelOne.setValue(address.getLabel());
-            String tmp = address.getStreet() + ", "
-                    + address.getBarangay() + ", "
-                    + address.getCity() + ", "
-                    + address.getRegion() + ", "
-                    + address.getPostal();
-            addressOne.setValue(tmp);
+            addressOne.setValue(address.formattedAddress());
         }
 
         if (addresses.size() > 1) {
             Address address = addresses.getLast();
             addTwo = address;
             labelTwo.setValue(address.getLabel());
-            String tmp = address.getStreet() + ", "
-                    + address.getBarangay() + ", "
-                    + address.getCity() + ", "
-                    + address.getRegion() + ", "
-                    + address.getPostal();
-            addressTwo.setValue(tmp);
+            addressTwo.setValue(address.formattedAddress());
         }
 
     }

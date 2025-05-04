@@ -58,6 +58,7 @@ abstract public class BaseController {
     }
 
     public void gotoCart(MouseEvent mouseEvent) {
+        viewModel.switchTo("user/CartView");
     }
 
     public String fileChooser(Node node) {

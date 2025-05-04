@@ -95,6 +95,20 @@ public class BaseRepository<T> {
         }
     }
 
+    public List<T> Raw(String query, Object... value) {
+        try (PreparedStatement stmt = connection.prepareStatement(query)) {
+
+            for (int i = 0; i < value.length; i++) {
+                stmt.setObject(i + 1, value[i]);
+            }
+
+            return executeQuery(stmt).list();
+
+        } catch (SQLException err) {
+            throw new RuntimeException("[Repository] SQL Error:: " + err.getMessage());
+        }
+    }
+
     public List<T> findLike(String column, Object value) {
         entityManager.isValidColumn(column);
 
@@ -212,7 +226,7 @@ public class BaseRepository<T> {
 
             return new QueryResult<T>(result);
         } catch (SQLException err) {
-            throw new RuntimeException("[Repository] Failed to execute due to -> " + err.getMessage());
+            throw new RuntimeException("[Repository] Failed to execute on table["+tableName+ "] due to -> " + err.getMessage());
         }
     }
 

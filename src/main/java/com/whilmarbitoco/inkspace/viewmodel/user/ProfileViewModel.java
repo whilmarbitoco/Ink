@@ -19,27 +19,28 @@ public class ProfileViewModel extends BaseViewModel {
     private final StringProperty lastname = new SimpleStringProperty("");
     private final StringProperty email = new SimpleStringProperty("");
     private final StringProperty image = new SimpleStringProperty("");
-    private User current = UserStore.getInstance().getUser();
 
+    
     private final UserRepository userRepository = new UserRepository();
 
 
     public ProfileViewModel() {
-        firstname.setValue(current.getFirstName());
-        lastname.setValue(current.getLastName());
-        email.setValue(current.getEmail());
-        image.setValue(current.getImage());
+        firstname.setValue(currentUser.getFirstName());
+        lastname.setValue(currentUser.getLastName());
+        email.setValue(currentUser.getEmail());
+        image.setValue(currentUser.getImage());
+        
     }
 
     public void update() {
-        current.setFirstName(firstname.get());
-        current.setLastName(lastname.get());
-        current.setEmail(email.get());
+        currentUser.setFirstName(firstname.get());
+        currentUser.setLastName(lastname.get());
+        currentUser.setEmail(email.get());
 
         try {
             String destination = ImageHelper.save(image.get());
-            current.setImage(destination);
-            userRepository.update(current);
+            currentUser.setImage(destination);
+            userRepository.update(currentUser);
             message.setValue("Successfully Updated.");
         } catch (IOException e) {
             error.setValue("Error Uploading file");

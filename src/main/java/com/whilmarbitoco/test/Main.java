@@ -1,17 +1,15 @@
 package com.whilmarbitoco.test;
 
 import com.whilmarbitoco.inkspace.repository.BookRepository;
-import com.whilmarbitoco.inkspace.utils.ViewHandler;
-import javafx.application.Application;
-import javafx.stage.Stage;
+import com.whilmarbitoco.inkspace.repository.OrderRepository;
 
 public class Main {
 
-
-
     public static void main(String[] args) {
-        BookRepository br = new BookRepository();
+        OrderRepository orderRepository = new OrderRepository();
 
-        br.deleteWhere("BookID = ? AND name = ? OR a = ?", 1, "john", "20");
+      orderRepository.getStoreOrder(2).forEach(order -> {
+          System.out.println(order.getStatus());
+      });
     }
 }

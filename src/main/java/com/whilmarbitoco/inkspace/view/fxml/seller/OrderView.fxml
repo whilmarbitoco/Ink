@@ -4,26 +4,26 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<HBox prefHeight="450.0" prefWidth="772.0" stylesheets="@css/seller.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.whilmarbitoco.inkspace.view.controller.seller.BookController">
+<HBox prefHeight="450.0" prefWidth="772.0" stylesheets="@css/seller.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.whilmarbitoco.inkspace.view.controller.seller.OrderController">
 <VBox alignment="TOP_CENTER" prefHeight="450.0" prefWidth="157.0" spacing="10" styleClass="side__bar">
     <Pane prefHeight="10" />
     <Label styleClass="logo__text" text="INK" />
     <VBox alignment="CENTER" prefHeight="199.0" prefWidth="117.0" spacing="10">
-        <Button onAction="#gotoSeller" alignment="TOP_LEFT" prefHeight="32.0" prefWidth="135.0" styleClass="btn" text="Dashboard">
+        <Button alignment="TOP_LEFT" prefHeight="32.0" prefWidth="135.0" styleClass="btn" text="Dashboard">
             <graphic>
                 <ImageView fitHeight="23.0" fitWidth="38.0" preserveRatio="true">
                     <Image url="@img/book.png" />
                 </ImageView>
             </graphic>
         </Button>
-        <Button alignment="TOP_LEFT" prefHeight="32.0" prefWidth="135.0" styleClass="active" text="Books">
+        <Button alignment="TOP_LEFT" prefHeight="32.0" prefWidth="135.0" styleClass="btn" text="Books">
             <graphic>
                 <ImageView fitHeight="23.0" fitWidth="38.0" preserveRatio="true">
                     <Image url="@img/package.png" />
                 </ImageView>
             </graphic>
         </Button>
-        <Button onMouseClicked="#gotoOrder" alignment="TOP_LEFT" prefHeight="32.0" prefWidth="135.0" styleClass="btn" text="Orders">
+        <Button alignment="TOP_LEFT" prefHeight="32.0" prefWidth="135.0" styleClass="active" text="Orders">
             <graphic>
                 <ImageView fitHeight="23.0" fitWidth="38.0" preserveRatio="true">
                     <Image url="@img/sold.png" />
@@ -47,15 +47,13 @@
         </HBox>
 
         <VBox prefHeight="419.0" prefWidth="620.0" spacing="10" styleClass="v__content">
-            <HBox alignment="CENTER_RIGHT">
-                <Button onAction="#addBookAction" styleClass="btn" text="Add Book" />
-            </HBox>
             <TableView fx:id="tableView" onMouseClicked="#tableMouseAction">
                 <columns>
-                    <TableColumn fx:id="tableID" prefWidth="90" text="ID" />
-                    <TableColumn fx:id="tableTitle" prefWidth="300" text="Title" />
-                    <TableColumn fx:id="tablePrice" prefWidth="100" text="Price" />
-                    <TableColumn fx:id="tableQty" prefWidth="100" text="Quantity" />
+                    <TableColumn fx:id="idCol" prefWidth="60" text="Order ID" />
+                    <TableColumn fx:id="titleCol" minWidth="200.0" prefWidth="0.0" text="Book Title" />
+                    <TableColumn fx:id="priceCol" prefWidth="100" text="Book Price" />
+                    <TableColumn fx:id="qtyCol" minWidth="80" prefWidth="0.0" text="Quantity" />
+                    <TableColumn fx:id="statusCol" prefWidth="145" text="Status" />
                 </columns>
             </TableView>
         </VBox>

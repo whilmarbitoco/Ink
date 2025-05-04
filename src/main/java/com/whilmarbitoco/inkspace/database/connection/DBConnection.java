@@ -9,6 +9,9 @@ import java.util.Properties;
 
 public class DBConnection {
 
+
+    private static Connection conn;
+
     private static Properties loadProperties() {
         Properties props = new Properties();
         try (FileInputStream fis = new FileInputStream(getPath())) {
@@ -26,7 +29,13 @@ public class DBConnection {
         String password = props.getProperty("db.password");
 
         try {
-            return DriverManager.getConnection(url, user, password);
+
+            if (conn == null) {
+                conn = DriverManager.getConnection(url, user, password);
+            }
+
+            return conn;
+
         } catch (SQLException e) {
             throw new RuntimeException("Error connecting to the database", e);
         }

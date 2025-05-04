@@ -8,6 +8,11 @@
     -fx-font-weight: bold;
 }
 
+
+.header__text {
+    -fx-font-size: 14px;
+}
+
 Button {
     -fx-font-weight: normal;
     -fx-cursor: hand;
@@ -23,5 +28,18 @@ Button {
 .edit__btn {
     -fx-background-color: #738BFF;
     -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+}
+
+.address__text {
+    -fx-font-size: 8px;
+}
+
+.text__label {
+    -fx-font-size: 10px;
+}
+
+.edition__text {
+    -fx-font-size: 12px;
     -fx-font-weight: bold;
 }

@@ -83,4 +83,16 @@ ScrollPane .increment-button, ScrollPane .decrement-button {
     -fx-padding: 2px;
 }
 
+.del__btn {
+    -fx-cursor: hand;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-border-width: 0;
+    -fx-border-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-text-fill:  #C70039;
+    -fx-font-weight: bold;
+}
 
