@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:controller="com.whilmarbitoco.inkspace.view.controller.user.RateController" prefHeight="225.0" prefWidth="463.0" styleClass="header__content" spacing="10" stylesheets="@css/item.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+    <HBox alignment="CENTER_LEFT" spacing="5">
+        <Label styleClass="card__title" text="Rate" />
+        <Label fx:id="title" styleClass="card__title" text="Crime and Punishment" />
+    </HBox>
+    <VBox spacing="3">
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label styleClass="card__description" text="Rating" />
+            <Label fx:id="ratingField" text="0"/>
+        </HBox>
+        <Slider fx:id="rating" majorTickUnit="1" max="5" minorTickCount="0" showTickLabels="true" snapToTicks="true" />
+    </VBox>
+
+    <VBox styleClass="3">
+        <Label styleClass="card__description" text="Comment" />
+        <TextArea fx:id="comment" wrapText="true" />
+    </VBox>
+    <HBox alignment="CENTER_RIGHT">
+        <Button onAction="#rateAction" prefHeight="33.0" prefWidth="72.0" styleClass="btn" text="Rate" />
+    </HBox>
+</VBox>

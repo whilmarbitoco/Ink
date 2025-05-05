@@ -27,7 +27,7 @@
             </HBox>
         </HBox>
     </VBox>
-    <VBox alignment="CENTER" prefHeight="92.0" prefWidth="87.0">
+    <VBox fx:id="rateContainer" alignment="CENTER" prefHeight="92.0" prefWidth="87.0">
         <Button onAction="#rateAction" styleClass="btn" text="Rate" />
     </VBox>
 </HBox>

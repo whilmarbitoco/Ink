@@ -32,12 +32,12 @@ public class Review {
 
     public Review() {}
 
-    public Review(int userID, int bookID, int rating, String comment, LocalDateTime created) {
+    public Review(int userID, int bookID, int rating, String comment) {
         this.userID = userID;
         this.bookID = bookID;
         this.rating = rating;
         this.comment = comment;
-        this.created = created;
+        this.created = LocalDateTime.now();
     }
 
     public int getRatingID() {

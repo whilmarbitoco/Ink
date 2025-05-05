@@ -1,7 +1,5 @@
 package com.whilmarbitoco.test;
 
-import com.whilmarbitoco.inkspace.repository.BookRepository;
-import com.whilmarbitoco.inkspace.repository.OrderRepository;
 import com.whilmarbitoco.inkspace.repository.ReviewRepository;
 
 public class Main {

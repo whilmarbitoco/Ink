@@ -12,4 +12,5 @@ public class ReviewRepository extends BaseRepository<Review> {
     public List<Review> getByBook(int bookID) {
         return findWhere("BookID", "=", bookID);
     }
+
 }
