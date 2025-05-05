@@ -74,6 +74,16 @@ public class BookRepository extends BaseRepository<Book> {
         }).toList();
     }
 
+    public List<Book> getBookByGenre(int genreID) {
+       List<BookGenre> bg = bookGenreRepository.findWhere("GenreID", "=", genreID);
+       if (bg.isEmpty()) return List.of();
+
+       return bg.stream().map(b -> {
+           Book bk = findWhere("BookID", "=",b.getBookID()).getFirst();
+           return bk;
+       }).toList();
+    }
+
     public List<Book> search(String str) {
         return findLike("Title", str);
     }
