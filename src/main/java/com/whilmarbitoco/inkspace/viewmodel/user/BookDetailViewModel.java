@@ -4,6 +4,7 @@ import com.whilmarbitoco.inkspace.model.*;
 import com.whilmarbitoco.inkspace.repository.BookRepository;
 import com.whilmarbitoco.inkspace.repository.CartRepository;
 import com.whilmarbitoco.inkspace.repository.OrderRepository;
+import com.whilmarbitoco.inkspace.repository.ReviewRepository;
 import com.whilmarbitoco.inkspace.viewmodel.BaseViewModel;
 import javafx.beans.property.FloatProperty;
 import javafx.beans.property.IntegerProperty;
@@ -12,10 +13,13 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class BookDetailViewModel extends BaseViewModel {
 
+    private final List<Review> reviews = new ArrayList<>();
     private final ObservableList<Edition> editions = FXCollections.observableArrayList();
     private final ObservableList<Cover> covers = FXCollections.observableArrayList();
     private final IntegerProperty quantity = new SimpleIntegerProperty(0);
@@ -27,6 +31,7 @@ public class BookDetailViewModel extends BaseViewModel {
     private final BookRepository bookRepository = new BookRepository();
     private final CartRepository cartRepository = new CartRepository();
     private final OrderRepository orderRepository = new OrderRepository();
+    private final ReviewRepository reviewRepository = new ReviewRepository();
 
     private Book book;
     private BookDetail detail;
@@ -36,6 +41,7 @@ public class BookDetailViewModel extends BaseViewModel {
 
         editions.addAll(bookRepository.getEdition(book.getBookID()));
         covers.addAll(bookRepository.getCover(book.getBookID()));
+        reviews.addAll(reviewRepository.getByBook(book.getBookID()));
     }
 
     public void setBook(Book book) {
@@ -102,6 +108,10 @@ public class BookDetailViewModel extends BaseViewModel {
 
     public int getQuantity() {
         return quantity.get();
+    }
+
+    public List<Review> getReviews() {
+        return reviews;
     }
 
     public IntegerProperty quantityProperty() {

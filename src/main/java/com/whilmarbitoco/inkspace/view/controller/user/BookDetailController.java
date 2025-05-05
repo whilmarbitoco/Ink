@@ -36,7 +36,6 @@ public class BookDetailController extends BaseController {
 
     public void initialize() {
         setViewModel(viewModel);
-        initData();
     }
 
     protected void bindView() {
@@ -66,10 +65,12 @@ public class BookDetailController extends BaseController {
         girdReviews.getChildren().clear();
 
         try {
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < viewModel.getReviews().size(); i++) {
 
                 FXMLLoader loader = ViewHandler.getLoader("user/ReviewItem");
                 HBox pane = loader.load();
+                ReviewItemController controller = loader.getController();
+                controller.setReview(viewModel.getReviews().get(i));
                 girdReviews.add(pane, 0, i);
             }
         } catch (Exception e) {
@@ -80,6 +81,7 @@ public class BookDetailController extends BaseController {
     public void setBook(Book book) {
         viewModel.setBook(book);
         bindView();
+        initData();
     }
 
     public void minusAction(ActionEvent actionEvent) {

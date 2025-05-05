@@ -2,14 +2,16 @@ package com.whilmarbitoco.test;
 
 import com.whilmarbitoco.inkspace.repository.BookRepository;
 import com.whilmarbitoco.inkspace.repository.OrderRepository;
+import com.whilmarbitoco.inkspace.repository.ReviewRepository;
 
 public class Main {
 
     public static void main(String[] args) {
-        OrderRepository orderRepository = new OrderRepository();
+        ReviewRepository rr = new ReviewRepository();
 
-      orderRepository.getStoreOrder(2).forEach(order -> {
-          System.out.println(order.getStatus());
-      });
+        rr.findAll().forEach(e -> {
+            System.out.println(e.getCreated().getMonth() + " " + e.getCreated().getYear());
+            System.out.println(e.getComment());
+        });
     }
 }
