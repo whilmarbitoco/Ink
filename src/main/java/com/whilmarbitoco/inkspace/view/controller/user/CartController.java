@@ -13,14 +13,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 public class CartController extends BaseController {
 
-
-    public TextField searchField;
     public Label usernameLabel;
     public GridPane grid;
+    public Label totalField;
 
     private final CartViewModel viewModel = new CartViewModel();
 
@@ -28,26 +25,29 @@ public class CartController extends BaseController {
         bindView();
         setViewModel(viewModel);
 
-        usernameLabel.setText(viewModel.getCurrentUser().getFirstName() + " " + viewModel.getCurrentUser().getLastName());
-
-//        debouncing
-        searchField.textProperty().addListener((obs, oldText, newText) -> {
-            pause.setOnFinished(event -> {
-                System.out.println(newText);
-            });
-            pause.playFromStart();
-        });
+        usernameLabel.setText(viewModel.getCurrentUser().getFullName());
 
 
         CartStore.cart().clear();
+        CartStore.selected().clear();
         CartStore.cart().addAll(viewModel.getCartList());
         initData();
+
+        CartStore.selected().addListener((ListChangeListener<? super Cart>) change -> {
+            totalField.setText(viewModel.getTotal());
+        });
     }
 
     private void initData() {
         grid.getRowConstraints().clear();
         grid.getColumnConstraints().clear();
         grid.getChildren().clear();
+        viewModel.fetch();
+        totalField.setText(viewModel.getTotal());
+        CartStore.cart().clear();
+        CartStore.cart().addAll(viewModel.getCartList());
+
+
         try {
             int row = 0;
             int col = 0;

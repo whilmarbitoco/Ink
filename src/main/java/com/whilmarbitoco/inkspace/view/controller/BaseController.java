@@ -54,7 +54,11 @@ abstract public class BaseController {
     }
 
     public void gotoStore(MouseEvent mouseEvent) {
-        viewModel.switchTo("user/StoreView");
+        if (viewModel.getCurrentUser().getRoleID() > 2) {
+            viewModel.switchTo("seller/SellerView");
+            return;
+        }
+        ViewHandler.openChildView("user/CreateStoreView");
     }
 
     public void gotoCart(MouseEvent mouseEvent) {
@@ -71,7 +75,7 @@ abstract public class BaseController {
         Stage stage = (Stage) node.getScene().getWindow();
         File selectedFile = fileChooser.showOpenDialog(stage);
 
-        return selectedFile.getAbsolutePath();
+        return selectedFile == null? null : selectedFile.getAbsolutePath();
     }
 
     public void logout() {
@@ -80,6 +84,10 @@ abstract public class BaseController {
         if (confirm) {
             viewModel.logout();
         }
+    }
+
+    public void openOrder() {
+        ViewHandler.openChildView("user/OrderView");
     }
 
     protected boolean showConfirmation(String title, String message) {

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<HBox fx:controller="com.whilmarbitoco.inkspace.view.controller.user.OrderItemController" prefHeight="115.0" prefWidth="390.0" spacing="5" styleClass="card__container" stylesheets="@css/item.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+    <ImageView fx:id="imgField" fitHeight="92.0" fitWidth="92.0">
+        <Image url="@img/camus.jpg" />
+    </ImageView>
+    <VBox>
+        <Label fx:id="titleField" styleClass="card__title" text="Crime and Punishment" />
+        <Label fx:id="descField" prefHeight="47.0" prefWidth="244.0" text="t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution" wrapText="true">
+         <font>
+            <Font size="8.0" />
+         </font>
+        </Label>
+        <HBox spacing="15">
+            <HBox alignment="CENTER">
+                <Label styleClass="card__description" text="Quantity: " />
+                <Label fx:id="qtyField" styleClass="price" text="2" />
+            </HBox>
+            <HBox alignment="CENTER">
+                <Label styleClass="card__description" text="Total Price: " />
+                <Label fx:id="priceField" styleClass="price" text="400" />
+            </HBox>
+        </HBox>
+    </VBox>
+    <VBox alignment="CENTER" prefHeight="92.0" prefWidth="87.0">
+        <Button onAction="#rateAction" styleClass="btn" text="Rate" />
+    </VBox>
+</HBox>

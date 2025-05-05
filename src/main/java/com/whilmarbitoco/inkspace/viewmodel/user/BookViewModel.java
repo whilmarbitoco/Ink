@@ -17,6 +17,12 @@ public class BookViewModel extends BaseViewModel {
         fetch();
     }
 
+    public void search(String str) {
+        books.clear();
+        List<Book> bks = bookRepository.search(str);
+        books.addAll(bks);
+    }
+
     public void fetch() {
         books.clear();
         books.addAll(bookRepository.findAll());

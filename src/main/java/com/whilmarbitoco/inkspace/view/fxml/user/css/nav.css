@@ -42,6 +42,7 @@ TextField {
    -fx-border-width: 1px;
    -fx-border-color: #C9C9C9;
    -fx-border-radius: 10px;
+   -fx-background-radius: 10px;
 }
 
 .title__col {
@@ -96,3 +97,14 @@ ScrollPane .increment-button, ScrollPane .decrement-button {
     -fx-font-weight: bold;
 }
 
+.author__name {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #000000;
+}
+
+.author__penName {
+    -fx-font-size: 10px;
+    -fx-font-style: italic;
+    -fx-text-fill: #333333;
+}

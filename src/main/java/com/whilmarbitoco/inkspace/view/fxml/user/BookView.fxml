@@ -76,6 +76,16 @@
                           </ImageView>
                       </graphic>
                   </Button>
+                    <Button onMouseClicked="#openOrder" styleClass="nav__btn">
+                        <tooltip>
+                            <Tooltip text="Orders" />
+                        </tooltip>
+                        <graphic>
+                            <ImageView fitHeight="23.0" fitWidth="26.0" preserveRatio="true">
+                                <Image url="@img/local.png" />
+                            </ImageView>
+                        </graphic>
+                    </Button>
                     <Pane prefHeight="140.0" prefWidth="37.0" />
                     <Button onMouseClicked="#logout" styleClass="nav__btn">
                         <tooltip>

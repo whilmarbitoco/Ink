@@ -23,23 +23,25 @@ public class BookController extends BaseController {
         Platform.runLater(() -> {
             usernameLabel.requestFocus();
         });
-        initDate();
+        initData();
         bindView();
         setViewModel(viewModel);
-        usernameLabel.setText(viewModel.getCurrentUser().getFirstName() + " " + viewModel.getCurrentUser().getLastName());
+        usernameLabel.setText(viewModel.getCurrentUser().getFullName());
 
 //        debouncing
         searchField.textProperty().addListener((obs, oldText, newText) -> {
             pause.setOnFinished(event -> {
-                System.out.println(newText);
+                viewModel.search(newText);
+                initData();
             });
             pause.playFromStart();
         });
     }
 
-    private void initDate() {
+    private void initData() {
         gridTwo.getColumnConstraints().clear();
         gridTwo.getRowConstraints().clear();
+        gridTwo.getChildren().clear();
 
         try {
             int row = 0;

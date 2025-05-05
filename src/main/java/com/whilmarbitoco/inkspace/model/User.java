@@ -92,4 +92,8 @@ public class User {
     public void setRoleID(int roleID) {
         this.roleID = roleID;
     }
+
+    public String getFullName() {
+        return getFirstName() + " " + getLastName();
+    }
 }

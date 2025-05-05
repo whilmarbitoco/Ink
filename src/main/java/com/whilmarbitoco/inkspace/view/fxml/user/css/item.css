@@ -20,7 +20,7 @@
 }
 
 .card__container:hover {
-    -fx-pref-width: 183;
+    -fx-padding: 12px;
     -fx-border-color: #F60EE7;
 }
 
@@ -62,4 +62,9 @@
     -fx-background-color: transparent;
     -fx-font-size: 13px;
     -fx-text-fill: #F60EE7;
+}
+
+.header__content {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 10px;
 }

@@ -66,7 +66,7 @@
                     <Pane prefHeight="17.0" prefWidth="340.0" />
                     <HBox spacing="10">
                         <Button onAction="#addCartAction" styleClass="cancel__btn" prefHeight="40.0" prefWidth="171.0" text="Add to Cart" />
-                        <Button styleClass="btn" prefHeight="40.0" prefWidth="156.0" text="Buy" />
+                        <Button onAction="#buyAction" styleClass="btn" prefHeight="40.0" prefWidth="156.0" text="Buy" />
                     </HBox>
                 </VBox>
             </HBox>
@@ -76,8 +76,8 @@
             <VBox spacing="10" styleClass="ratings__container">
                 <Label styleClass="header" text="Ratings and Reviews" />
                 <HBox alignment="CENTER">
-                    <ScrollPane prefHeight="470.0" prefWidth="539.0">
-                        <GridPane fx:id="girdReviews" prefWidth="530.0">
+                    <ScrollPane prefHeight="470.0" prefWidth="540.0">
+                        <GridPane fx:id="girdReviews" vgap="2">
                             <columnConstraints>
                                 <ColumnConstraints hgrow="SOMETIMES" />
                                 <ColumnConstraints hgrow="SOMETIMES" />

@@ -36,7 +36,8 @@ public class AuthorController extends BaseController  {
 //        debouncing
         searchField.textProperty().addListener((obs, oldText, newText) -> {
             pause.setOnFinished(event -> {
-                System.out.println(newText);
+                viewModel.search(newText);
+                initData();
             });
             pause.playFromStart();
         });
@@ -45,6 +46,7 @@ public class AuthorController extends BaseController  {
     private void initData() {
         grid.getColumnConstraints().clear();
         grid.getRowConstraints().clear();
+        grid.getChildren().clear();
 
         try {
             int row = 0;

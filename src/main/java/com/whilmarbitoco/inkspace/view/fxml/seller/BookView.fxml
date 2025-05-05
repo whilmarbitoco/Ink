@@ -9,10 +9,10 @@
     <Pane prefHeight="10" />
     <Label styleClass="logo__text" text="INK" />
     <VBox alignment="CENTER" prefHeight="199.0" prefWidth="117.0" spacing="10">
-        <Button onAction="#gotoSeller" alignment="TOP_LEFT" prefHeight="32.0" prefWidth="135.0" styleClass="btn" text="Dashboard">
+        <Button alignment="TOP_LEFT" onAction="#gotoSeller" prefHeight="32.0" prefWidth="135.0" styleClass="btn" text="Dashboard">
             <graphic>
                 <ImageView fitHeight="23.0" fitWidth="38.0" preserveRatio="true">
-                    <Image url="@img/book.png" />
+                    <Image url="@img/homeapp.png" />
                 </ImageView>
             </graphic>
         </Button>
@@ -23,14 +23,14 @@
                 </ImageView>
             </graphic>
         </Button>
-        <Button onMouseClicked="#gotoOrder" alignment="TOP_LEFT" prefHeight="32.0" prefWidth="135.0" styleClass="btn" text="Orders">
+        <Button alignment="TOP_LEFT" onAction="#gotoOrder" prefHeight="32.0" prefWidth="135.0" styleClass="btn" text="Orders">
             <graphic>
                 <ImageView fitHeight="23.0" fitWidth="38.0" preserveRatio="true">
                     <Image url="@img/sold.png" />
                 </ImageView>
             </graphic>
         </Button>
-        <Button alignment="TOP_LEFT" prefHeight="32.0" prefWidth="135.0" styleClass="btn" text="Sold Books">
+        <Button onAction="#gotoSold" alignment="TOP_LEFT" prefHeight="32.0" prefWidth="135.0" styleClass="btn" text="Sold Books">
             <graphic>
                 <ImageView fitHeight="23.0" fitWidth="38.0" preserveRatio="true">
                     <Image url="@img/sold.png" />
@@ -48,6 +48,8 @@
 
         <VBox prefHeight="419.0" prefWidth="620.0" spacing="10" styleClass="v__content">
             <HBox alignment="CENTER_RIGHT">
+                <Label text="My Books" />
+                <Pane prefHeight="28.0" prefWidth="460.0" />
                 <Button onAction="#addBookAction" styleClass="btn" text="Add Book" />
             </HBox>
             <TableView fx:id="tableView" onMouseClicked="#tableMouseAction">

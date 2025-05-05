@@ -61,6 +61,10 @@ public class ViewHandler {
 
     }
 
+    public static Stage primaryStage() {
+        return stage;
+    }
+
     public static void handleRole(int roleID) {
         switch (roleID) {
             case 1:

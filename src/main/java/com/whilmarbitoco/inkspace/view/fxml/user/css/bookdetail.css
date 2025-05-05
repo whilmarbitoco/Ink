@@ -92,3 +92,22 @@ ChoiceBox {
     -fx-border-radius: 5px;
     -fx-cursor: hand;
 }
+
+
+ScrollPane {
+    -fx-background-color: transparent;
+}
+
+ScrollPane .viewport {
+    -fx-background-color: transparent;
+}
+
+ScrollPane .scroll-bar:vertical {
+    -fx-background-color: #f0f0f0;
+    -fx-pref-width: 10px;
+}
+
+ScrollPane .increment-button, ScrollPane .decrement-button {
+    -fx-background-color: #ddd;
+    -fx-padding: 2px;
+}

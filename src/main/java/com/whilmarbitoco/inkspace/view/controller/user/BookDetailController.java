@@ -4,15 +4,18 @@ import com.whilmarbitoco.inkspace.model.Book;
 import com.whilmarbitoco.inkspace.model.BookDetail;
 import com.whilmarbitoco.inkspace.model.Cover;
 import com.whilmarbitoco.inkspace.model.Edition;
-import com.whilmarbitoco.inkspace.repository.BookRepository;
 import com.whilmarbitoco.inkspace.utils.ImageHelper;
+import com.whilmarbitoco.inkspace.utils.ViewHandler;
 import com.whilmarbitoco.inkspace.view.controller.BaseController;
 import com.whilmarbitoco.inkspace.viewmodel.user.BookDetailViewModel;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 public class BookDetailController extends BaseController {
 
@@ -33,6 +36,7 @@ public class BookDetailController extends BaseController {
 
     public void initialize() {
         setViewModel(viewModel);
+        initData();
     }
 
     protected void bindView() {
@@ -54,6 +58,23 @@ public class BookDetailController extends BaseController {
             viewModel.totalProperty().setValue(total);
             this.total.setText(Float.toString(total));
         });
+    }
+
+    public void initData() {
+        girdReviews.getColumnConstraints().clear();
+        girdReviews.getRowConstraints().clear();
+        girdReviews.getChildren().clear();
+
+        try {
+            for (int i = 0; i < 5; i++) {
+
+                FXMLLoader loader = ViewHandler.getLoader("user/ReviewItem");
+                HBox pane = loader.load();
+                girdReviews.add(pane, 0, i);
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void setBook(Book book) {
@@ -87,5 +108,9 @@ public class BookDetailController extends BaseController {
         if (selected == null) return;
 
         viewModel.setSelectedEdition(selected);
+    }
+
+    public void buyAction(ActionEvent actionEvent) {
+        viewModel.buy();
     }
 }

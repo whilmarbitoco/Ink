@@ -7,6 +7,7 @@ import com.whilmarbitoco.inkspace.viewmodel.seller.OrderDetailViewModel;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 
 import java.util.List;
 
@@ -26,6 +27,7 @@ public class OrderDetailController extends BaseController {
     public Label qtyField;
     public Label coverField;
     public Label desField;
+    public HBox action;
 
     private final OrderDetailViewModel viewModel = new OrderDetailViewModel();
 
@@ -72,5 +74,10 @@ public class OrderDetailController extends BaseController {
         if (!res) return;;
         viewModel.sell();
         close(userImg);
+    }
+
+    public void hide() {
+        action.setManaged(false);
+        action.setVisible(false);
     }
 }

@@ -3,7 +3,7 @@ package com.whilmarbitoco.inkspace.viewmodel.user;
 import com.whilmarbitoco.inkspace.model.*;
 import com.whilmarbitoco.inkspace.repository.BookRepository;
 import com.whilmarbitoco.inkspace.repository.CartRepository;
-import com.whilmarbitoco.inkspace.store.UserStore;
+import com.whilmarbitoco.inkspace.repository.OrderRepository;
 import com.whilmarbitoco.inkspace.viewmodel.BaseViewModel;
 import javafx.beans.property.FloatProperty;
 import javafx.beans.property.IntegerProperty;
@@ -11,6 +11,8 @@ import javafx.beans.property.SimpleFloatProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+
+import java.util.Optional;
 
 public class BookDetailViewModel extends BaseViewModel {
 
@@ -24,6 +26,7 @@ public class BookDetailViewModel extends BaseViewModel {
 
     private final BookRepository bookRepository = new BookRepository();
     private final CartRepository cartRepository = new CartRepository();
+    private final OrderRepository orderRepository = new OrderRepository();
 
     private Book book;
     private BookDetail detail;
@@ -51,9 +54,42 @@ public class BookDetailViewModel extends BaseViewModel {
             return;
         }
 
-        Cart cart = new Cart(currentUser.getUserID(), book.getBookID(), quantity.get(), selectedEdition.getEditionID(), selectedCover.getCoverID());
-        cartRepository.create(cart);
-        message.setValue("Book Added to Cart");
+        Cart res = cartRepository.getCart(currentUser.getUserID(), book.getBookID(), selectedEdition.getEditionID(), selectedCover.getCoverID());
+        if (res == null) {
+            Cart cart = new Cart(currentUser.getUserID(), book.getBookID(), quantity.get(), selectedEdition.getEditionID(), selectedCover.getCoverID());
+            cartRepository.create(cart);
+            message.setValue("Book Added to Cart");
+            return;
+        }
+        res.setQuantity(res.getQuantity() + quantity.get());
+        cartRepository.update(res);
+        message.setValue("Book Added to Cart.");
+
+    }
+
+    public void buy() {
+        if (selectedCover == null || selectedEdition == null) {
+            error.setValue("Please selected a cover and an edition");
+            return;
+        }
+
+        if (quantity.get() < 1) {
+            error.setValue("Quantity cannot be zero");
+            return;
+        }
+
+        Order order = new Order(currentUser.getUserID(), book.getBookID(), quantity.get(), selectedEdition.getEditionID(), selectedCover.getCoverID());
+        Optional<Book> b = bookRepository.findByID(book.getBookID());
+        if (b.isEmpty()) return;
+        if (quantity.get() > b.get().getQuantity()) {
+            error.setValue("Invalid Quantity for " + b.get().getTitle());
+            return;
+        }
+        b.get().setQuantity(b.get().getQuantity() - quantity.get());
+        bookRepository.update(b.get());
+        orderRepository.create(order);
+
+        message.setValue("Book Bought. Please check your orders.");
     }
 
     public Book getBook() {

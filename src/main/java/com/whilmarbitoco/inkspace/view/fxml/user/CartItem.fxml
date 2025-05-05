@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 
 <VBox fx:id="cartContainer" onMouseClicked="#clickedAction" alignment="TOP_CENTER" prefHeight="176.0" prefWidth="177.0" styleClass="card__container" stylesheets="@css/item.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.whilmarbitoco.inkspace.view.controller.user.CartItemController">
-    <ImageView fx:id="image" fitHeight="86.0" fitWidth="76.0" preserveRatio="true">
+    <ImageView fx:id="image" fitHeight="86.0" fitWidth="76.0">
         <Image url="@img/cover.jpg" />
     </ImageView>
     

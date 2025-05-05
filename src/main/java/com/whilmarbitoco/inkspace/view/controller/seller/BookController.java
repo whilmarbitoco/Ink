@@ -4,7 +4,6 @@ import com.whilmarbitoco.inkspace.model.Book;
 import com.whilmarbitoco.inkspace.utils.ViewHandler;
 import com.whilmarbitoco.inkspace.view.controller.BaseController;
 import com.whilmarbitoco.inkspace.viewmodel.seller.BookViewModel;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -81,7 +80,11 @@ public class BookController extends BaseController {
         viewModel.switchTo("seller/SellerView");
     }
 
-    public void gotoOrder(MouseEvent mouseEvent) {
+    public void gotoOrder(ActionEvent mouseEvent) {
         viewModel.switchTo("seller/OrderView");
+    }
+
+    public void gotoSold(ActionEvent mouseEvent) {
+        viewModel.switchTo("seller/SoldView");
     }
 }

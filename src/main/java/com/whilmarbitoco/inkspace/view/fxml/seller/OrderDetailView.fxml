@@ -66,7 +66,7 @@
        </HBox>
    </VBox>
     <Pane prefHeight="21.0" prefWidth="324.0" />
-    <HBox alignment="CENTER_RIGHT" spacing="5">
+    <HBox fx:id="action" alignment="CENTER_RIGHT" spacing="5">
         <Button onAction="#sellAction" styleClass="edit__btn" prefHeight="30.0" prefWidth="100.0" text="Sell" />
     </HBox>
 </VBox>

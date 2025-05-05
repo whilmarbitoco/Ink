@@ -59,6 +59,7 @@ public class ProfileController extends BaseController {
         }
         pathField.setText(path);
         viewModel.imageProperty().setValue(path);
+        profileImage.setImage(ImageHelper.load(path));
     }
 
     private void listen(StringProperty property) {

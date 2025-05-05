@@ -59,8 +59,10 @@ public class OrderController extends BaseController {
                 Scene scene = new Scene(parent);
                 child.setScene(scene);
                 child.setResizable(false);
-                child.setOnCloseRequest(ee -> {
+                child.setOnHidden(ee -> {
+                    System.out.println("Hello World -->> ");
                     viewModel.fetch();
+                    tableView.getItems().clear();
                     tableView.setItems(viewModel.getOrders());
                 });
                 child.show();
@@ -72,5 +74,17 @@ public class OrderController extends BaseController {
 
     public void exitStore(ActionEvent actionEvent) {
         viewModel.switchTo("user/BookView");
+    }
+
+    public void gotoSeller(ActionEvent actionEvent) {
+        viewModel.switchTo("seller/SellerView");
+    }
+
+    public void gotoBooks(ActionEvent mouseEvent) {
+        viewModel.switchTo("seller/BookView");
+    }
+
+    public void gotoSold(ActionEvent mouseEvent) {
+        viewModel.switchTo("seller/SoldView");
     }
 }

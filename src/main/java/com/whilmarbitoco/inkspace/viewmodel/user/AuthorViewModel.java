@@ -22,6 +22,12 @@ public class AuthorViewModel extends BaseViewModel {
         authors.addAll(authorRepository.findAll());
     }
 
+    public void search(String str) {
+        authors.clear();
+        List<Author> at = authorRepository.search(str);
+        authors.addAll(at);
+    }
+
     public List<Author> getAuthors() {
         return authors;
     }

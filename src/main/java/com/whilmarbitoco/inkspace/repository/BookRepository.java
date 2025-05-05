@@ -3,6 +3,7 @@ package com.whilmarbitoco.inkspace.repository;
 import com.whilmarbitoco.inkspace.model.*;
 
 import java.util.List;
+import java.util.Optional;
 
 public class BookRepository extends BaseRepository<Book> {
 
@@ -61,5 +62,19 @@ public class BookRepository extends BaseRepository<Book> {
             return coverRepository.findWhere("CoverTypeID", "=", e.getCoverID()).getFirst();
         }).toList();
 
+    }
+
+    public List<Book> getBookByAuthor(int authorID) {
+        List<BookAuthor> ba = bookAuthorRepository.findWhere("AuthorID", "=", authorID);
+        if (ba.isEmpty()) return List.of();
+
+        return ba.stream().map(b -> {
+            Book bk = findWhere("BookID", "=",b.getBookID()).getFirst();
+           return bk;
+        }).toList();
+    }
+
+    public List<Book> search(String str) {
+        return findLike("Title", str);
     }
 }

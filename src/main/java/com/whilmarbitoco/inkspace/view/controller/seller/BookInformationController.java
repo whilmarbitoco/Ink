@@ -2,6 +2,7 @@ package com.whilmarbitoco.inkspace.view.controller.seller;
 
 import com.whilmarbitoco.inkspace.model.Book;
 import com.whilmarbitoco.inkspace.model.BookDetail;
+import com.whilmarbitoco.inkspace.repository.BookDetailRepository;
 import com.whilmarbitoco.inkspace.repository.BookRepository;
 import com.whilmarbitoco.inkspace.utils.ImageHelper;
 import com.whilmarbitoco.inkspace.view.controller.BaseController;
@@ -11,6 +12,10 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+
+import java.io.IOException;
+import java.sql.Date;
 
 public class BookInformationController extends BaseController {
     
@@ -22,10 +27,12 @@ public class BookInformationController extends BaseController {
     public Button updateBtn;
     public TextField publisherField;
     public DatePicker publishedField;
+    private String path;
 
     private Book book;
     private BookDetail detail;
     private final BookRepository bookRepository = new BookRepository();
+    private final BookDetailRepository bookDetailRepository = new BookDetailRepository();
 
     public void initialize() {
         bindView();
@@ -51,7 +58,14 @@ public class BookInformationController extends BaseController {
     }
 
     public void enableEdit(ActionEvent actionEvent) {
-
+        titleField.setEditable(true);
+        descriptionArea.setEditable(true);
+        priceField.setEditable(true);
+        quantityField.setEditable(true);
+        publishedField.setEditable(true);
+        priceField.setEditable(true);
+        updateBtn.setManaged(true);
+        updateBtn.setVisible(true);
     }
 
     public void deleteAction(ActionEvent actionEvent) {
@@ -64,5 +78,30 @@ public class BookInformationController extends BaseController {
     }
 
     public void editAction(ActionEvent actionEvent) {
+        book.setTitle(titleField.getText());
+        book.setImage(path);
+        book.setPrice(Float.parseFloat(priceField.getText()));
+        book.setQuantity(Integer.parseInt(quantityField.getText()));
+        bookRepository.update(book);
+
+        detail.setDescription(descriptionArea.getText());
+        detail.setPublisher(publisherField.getText());
+        detail.setPublishedDate(Date.valueOf(publishedField.getValue()));
+
+        try {
+            ImageHelper.save(path);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        showInformation("Success", "Book Details updated");
+    }
+
+    public void changeImage(MouseEvent mouseEvent) {
+        if (!titleField.isEditable()) return;
+
+        String file = fileChooser(titleField);
+        if (file == null) return;
+        bookImg.setImage(ImageHelper.load(file));
+        path = file;
     }
 }

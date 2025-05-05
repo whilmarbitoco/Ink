@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox prefHeight="450.0" prefWidth="772.0" stylesheets="@css/seller.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.whilmarbitoco.inkspace.view.controller.seller.SoldController">
+<VBox alignment="TOP_CENTER" prefHeight="450.0" prefWidth="157.0" spacing="10" styleClass="side__bar">
+    <Pane prefHeight="10" />
+    <Label styleClass="logo__text" text="INK" />
+    <VBox alignment="CENTER" prefHeight="199.0" prefWidth="117.0" spacing="10">
+        <Button onAction="#gotoSeller" alignment="TOP_LEFT" prefHeight="32.0" prefWidth="135.0" styleClass="btn" text="Dashboard">
+            <graphic>
+                <ImageView fitHeight="23.0" fitWidth="38.0" preserveRatio="true">
+                    <Image url="@img/homeapp.png" />
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button onAction="#gotoBooks" alignment="TOP_LEFT" prefHeight="32.0" prefWidth="135.0" styleClass="btn" text="Books">
+            <graphic>
+                <ImageView fitHeight="23.0" fitWidth="38.0" preserveRatio="true">
+                    <Image url="@img/package.png" />
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button onAction="#gotoOrder" alignment="TOP_LEFT" prefHeight="32.0" prefWidth="135.0" styleClass="btn" text="Orders">
+            <graphic>
+                <ImageView fitHeight="23.0" fitWidth="38.0" preserveRatio="true">
+                    <Image url="@img/sold.png" />
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button alignment="TOP_LEFT" prefHeight="32.0" prefWidth="135.0" styleClass="active" text="Sold Books">
+            <graphic>
+                <ImageView fitHeight="23.0" fitWidth="38.0" preserveRatio="true">
+                    <Image url="@img/sold.png" />
+                </ImageView>
+            </graphic>
+        </Button>
+    </VBox>
+</VBox>
+    <VBox prefHeight="450.0" prefWidth="625.0">
+        <HBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="620.0" styleClass="nav__bar">
+            <Label styleClass="nav__text" text="My Store" />
+            <Pane prefHeight="26.0" prefWidth="463.0" />
+            <Button onAction="#exitStore" styleClass="edit__btn" text="Exit Store" />
+        </HBox>
+
+        <VBox prefHeight="419.0" prefWidth="620.0" spacing="10" styleClass="v__content">
+            <HBox>
+                <Label text="Sold Orders" />
+            </HBox>
+            <TableView fx:id="tableView" onMouseClicked="#tableMouseAction">
+                <columns>
+                    <TableColumn fx:id="idCol" prefWidth="60" text="Order ID" />
+                    <TableColumn fx:id="titleCol" minWidth="200.0" prefWidth="0.0" text="Book Title" />
+                    <TableColumn fx:id="priceCol" prefWidth="100" text="Book Price" />
+                    <TableColumn fx:id="qtyCol" minWidth="80" prefWidth="0.0" text="Quantity" />
+                    <TableColumn fx:id="statusCol" prefWidth="145" text="Status" />
+                </columns>
+            </TableView>
+        </VBox>
+    </VBox>
+</HBox>
