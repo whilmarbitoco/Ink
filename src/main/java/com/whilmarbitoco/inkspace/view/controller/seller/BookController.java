@@ -53,7 +53,7 @@ public class BookController extends BaseController {
                 Book selectedBook = tableView.getSelectionModel().getSelectedItem();
                 if (selectedBook == null) return;
 
-                Stage child = new Stage();
+                Stage child = ViewHandler.childStage();
 
                 FXMLLoader loader = ViewHandler.getLoader("seller/BookInformationView");
                 Parent parent = loader.load();
@@ -64,7 +64,7 @@ public class BookController extends BaseController {
                 Scene scene = new Scene(parent);
                 child.setScene(scene);
                 child.setResizable(false);
-                child.setOnCloseRequest(ee -> viewModel.fetch());
+                child.setOnHidden(ee -> viewModel.fetch());
                 child.show();
             }
         } catch (IOException e) {

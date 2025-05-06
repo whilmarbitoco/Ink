@@ -21,7 +21,7 @@ public class BookInfoViewModel extends BaseViewModel {
     private final StringProperty quantity = new SimpleStringProperty("");
     private final StringProperty filepath = new SimpleStringProperty("No such file selected");
     private final ObjectProperty<LocalDate> published = new SimpleObjectProperty<>(LocalDate.now());
-    private final ObjectProperty<Date> date = new SimpleObjectProperty<>();
+    private final ObjectProperty<Date> date = new SimpleObjectProperty<>(Date.valueOf(LocalDate.now()));
     private final StringProperty publisher = new SimpleStringProperty("");
     private final StringProperty description = new SimpleStringProperty("");
 

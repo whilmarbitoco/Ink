@@ -41,7 +41,6 @@ public class BookInformationController extends BaseController {
     protected void bindView() {
         if (book == null) return;
         detail = bookRepository.getDetail(book.getBookID());
-
         bookImg.setImage(ImageHelper.load(book.getImage()));
         titleField.setText(book.getTitle());
         descriptionArea.setText(detail.getDescription());
@@ -63,6 +62,7 @@ public class BookInformationController extends BaseController {
         priceField.setEditable(true);
         quantityField.setEditable(true);
         publishedField.setEditable(true);
+        publisherField.setEditable(true);
         priceField.setEditable(true);
         updateBtn.setManaged(true);
         updateBtn.setVisible(true);
@@ -72,7 +72,7 @@ public class BookInformationController extends BaseController {
         boolean res = showConfirmation("Confirm Action", "Are you sure you want to delete this book?");
         if (!res) return;
 
-        bookRepository.deleteBook(book.getBookID());
+        bookRepository.delete(book.getBookID());
         showInformation("Success", "Book Deleted Successfully");
         close(bookImg);
     }
@@ -87,7 +87,7 @@ public class BookInformationController extends BaseController {
         detail.setDescription(descriptionArea.getText());
         detail.setPublisher(publisherField.getText());
         detail.setPublishedDate(Date.valueOf(publishedField.getValue()));
-
+        bookDetailRepository.update(detail);
         try {
             ImageHelper.save(path);
         } catch (IOException e) {

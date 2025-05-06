@@ -10,6 +10,9 @@ module com.whilmarbitoco.inkspace {
     opens com.whilmarbitoco.inkspace.model to javafx.base;
     opens com.whilmarbitoco.inkspace.utils to javafx.base;
 
+    opens com.whilmarbitoco.inkspace.view.controller.admin to javafx.fxml;
+    exports com.whilmarbitoco.inkspace.view.controller.admin;
+
     opens com.whilmarbitoco.inkspace.view.controller.auth to javafx.fxml;
     exports com.whilmarbitoco.inkspace.view.controller.auth;
 

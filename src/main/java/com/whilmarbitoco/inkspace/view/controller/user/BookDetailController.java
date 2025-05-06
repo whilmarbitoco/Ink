@@ -64,6 +64,7 @@ public class BookDetailController extends BaseController {
         girdReviews.getRowConstraints().clear();
         girdReviews.getChildren().clear();
 
+        double ag = 0;
         try {
             for (int i = 0; i < viewModel.getReviews().size(); i++) {
 
@@ -72,10 +73,12 @@ public class BookDetailController extends BaseController {
                 ReviewItemController controller = loader.getController();
                 controller.setReview(viewModel.getReviews().get(i));
                 girdReviews.add(pane, 0, i);
+                ag *= viewModel.getReviews().get(i).getRating();
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+        avg.setText(Double.toString(ag * viewModel.getReviews().size()));
     }
 
     public void setBook(Book book) {

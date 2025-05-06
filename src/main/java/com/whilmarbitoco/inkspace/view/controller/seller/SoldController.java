@@ -50,7 +50,7 @@ public class SoldController extends BaseController {
                 if (selected == null) return;
                 System.out.println(selected.price);
 
-                Stage child = new Stage();
+                Stage child = ViewHandler.childStage();
 
                 FXMLLoader loader = ViewHandler.getLoader("seller/OrderDetailView");
                 Parent parent = loader.load();
@@ -60,7 +60,7 @@ public class SoldController extends BaseController {
                 Scene scene = new Scene(parent);
                 child.setScene(scene);
                 child.setResizable(false);
-                child.setOnCloseRequest(ee -> {
+                child.setOnHidden(ee -> {
                     viewModel.fetch();
                     tableView.setItems(viewModel.getOrders());
                 });

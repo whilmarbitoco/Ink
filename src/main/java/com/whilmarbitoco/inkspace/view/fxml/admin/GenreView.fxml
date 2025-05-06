@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox prefHeight="450.0" prefWidth="772.0" stylesheets="@css/admin.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.whilmarbitoco.inkspace.view.controller.admin.GenreController">
+<VBox alignment="TOP_CENTER" prefHeight="450.0" prefWidth="157.0" spacing="10" styleClass="side__bar">
+    <Pane prefHeight="10" />
+    <Label styleClass="logo__text" text="INK" />
+    <VBox alignment="CENTER" prefHeight="199.0" prefWidth="117.0" spacing="10">
+        <Button alignment="CENTER_LEFT" onAction="#openAuthor" prefHeight="32.0" prefWidth="135.0" styleClass="btn" text="Author">
+        </Button>
+        <Button alignment="CENTER_LEFT"  prefHeight="32.0" prefWidth="135.0" styleClass="active" text="Genre">
+        </Button>
+        <Button alignment="CENTER_LEFT" onAction="#openCover" prefHeight="32.0" prefWidth="135.0" styleClass="btn" text="Cover">
+        </Button>
+    </VBox>
+</VBox>
+    <VBox prefHeight="450.0" prefWidth="625.0">
+        <HBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="620.0" styleClass="nav__bar">
+            <Label styleClass="nav__text" text="Genres" />
+            <Pane prefHeight="26.0" prefWidth="483.0" />
+            <Button onAction="#logout" styleClass="edit__btn" text="Logout" />
+        </HBox>
+
+        <VBox prefHeight="419.0" prefWidth="620.0" spacing="10" styleClass="v__content">
+            <HBox alignment="CENTER_RIGHT">
+                <Label text="Available Genre" />
+                <Pane prefHeight="28.0" prefWidth="411.0" />
+                <Button onAction="#addAction" styleClass="btn" text="Add Genre" />
+            </HBox>
+            <TableView fx:id="tableView" onMouseClicked="#tableMouseAction">
+                <columns>
+                    <TableColumn fx:id="genreID" prefWidth="90" text="ID" />
+                    <TableColumn fx:id="genre" prefWidth="220" text="Genre" />
+                    <TableColumn fx:id="description" prefWidth="280" text="Description" />
+                </columns>
+            </TableView>
+        </VBox>
+    </VBox>
+</HBox>

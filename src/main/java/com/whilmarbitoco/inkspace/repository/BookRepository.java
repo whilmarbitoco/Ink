@@ -44,15 +44,6 @@ public class BookRepository extends BaseRepository<Book> {
         return bookDetailRepository.findWhere("BookID", "=", bookID).getFirst();
     }
 
-    public void deleteBook(int bookID) {
-        bookAuthorRepository.deleteWhere("BookID = ?" , bookID);
-        bookCoverRepository.deleteWhere("BookID = ?" , bookID);
-        bookGenreRepository.deleteWhere("BookID = ?" , bookID);
-        editionRepository.deleteWhere("BookID = ?", bookID);
-        bookDetailRepository.deleteWhere("BookID = ?", bookID);
-        delete(bookID);
-    }
-
     public List<Edition> getEdition(int bookID) {
         return editionRepository.findWhere("BookID", "=", bookID);
     }

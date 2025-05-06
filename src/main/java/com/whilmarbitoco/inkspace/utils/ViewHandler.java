@@ -72,7 +72,7 @@ public class ViewHandler {
     public static void handleRole(int roleID) {
         switch (roleID) {
             case 1:
-                System.out.println("Admin");
+                openView("admin/AuthorView");
                 break;
 
             case 2:

@@ -1,0 +1,109 @@
+.side__bar {
+    -fx-background-color: #738BFF;
+}
+
+.logo__text {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+.side__bar .btn {
+    -fx-cursor: hand;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: normal;
+    -fx-cursor: hand;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 5px;
+    -fx-border-width: 0;
+    -fx-border-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.content {
+    -fx-padding: 10;
+}
+
+.side__bar .btn:hover {
+    -fx-border-radius: 3px;
+    -fx-border-width: 1px;
+    -fx-border-color: #FFFFFF;
+}
+
+.edit__btn {
+    -fx-font-weight: normal;
+    -fx-cursor: hand;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 5px;
+    -fx-border-width: 0;
+    -fx-border-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.active {
+    -fx-cursor: hand;
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #738BFF;
+    -fx-font-weight: normal;
+}
+
+.nav__bar {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 10px;
+}
+
+.store__name__label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.nav__text {
+    -fx-font-size: 17px;
+    -fx-font-weight: normal;
+}
+
+.a__content {
+    -fx-padding: 10px;
+}
+
+.chart__content {
+    -fx-padding: 10px;
+}
+
+.edit__action__btn {
+    -fx-font-weight: normal;
+    -fx-cursor: hand;
+    -fx-background-color: #738BFF;
+    -fx-background-insets: 0;
+    -fx-padding: 5px;
+    -fx-border-width: 0;
+    -fx-border-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.v__content {
+    -fx-padding: 15px
+}
+
+.btn {
+    -fx-cursor: hand;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: normal;
+    -fx-cursor: hand;
+    -fx-background-color: #738BFF;
+    -fx-background-insets: 0;
+    -fx-padding: 5px 10px;
+    -fx-border-width: 0;
+    -fx-border-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.btn:hover {
+    -fx-background-color: #6174D4;
+}
